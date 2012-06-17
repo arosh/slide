@@ -1,0 +1,694 @@
+<html>
+      <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+        <title>intro scala</title>
+        <link type="text/css" rel="stylesheet" href="assets/css/show.css" />
+        <link type="text/css" rel="stylesheet" href="assets/css/prettify.css" />
+        <script type="text/javascript" src="assets/js/jquery.min.js"></script>
+        <script type="text/javascript" src="assets/js/show.js"></script>
+        <script type="text/javascript" src="assets/js/prettify/prettify.js"></script>
+        <script type="text/javascript" src="assets/js/prettify/lang-apollo.js"></script><script type="text/javascript" src="assets/js/prettify/lang-css.js"></script><script type="text/javascript" src="assets/js/prettify/lang-hs.js"></script><script type="text/javascript" src="assets/js/prettify/lang-lisp.js"></script><script type="text/javascript" src="assets/js/prettify/lang-lua.js"></script><script type="text/javascript" src="assets/js/prettify/lang-ml.js"></script><script type="text/javascript" src="assets/js/prettify/lang-proto.js"></script><script type="text/javascript" src="assets/js/prettify/lang-scala.js"></script><script type="text/javascript" src="assets/js/prettify/lang-sql.js"></script><script type="text/javascript" src="assets/js/prettify/lang-sql.js"></script><script type="text/javascript" src="assets/js/prettify/lang-vb.js"></script><script type="text/javascript" src="assets/js/prettify/lang-vhdl.js"></script><script type="text/javascript" src="assets/js/prettify/lang-wiki.js"></script><script type="text/javascript" src="assets/js/prettify/lang-yaml.js"></script><link type="text/css" rel="stylesheet" href="css/custom.css?1339897596015" />
+      <script type="text/javascript"><!--
+        window.onload=function() { prettyPrint(); };
+      --></script>
+      </head>
+      <body>
+        <div id="slides">
+          <div id="reel">
+            <div class="content" id="slide-0">
+       <div class="container"><h2 id="%E4%BB%8A%E3%81%AE%E3%81%86%E3%81%A1%E3%81%AB">今のうちに</h2><h2 id="%E7%9F%A5%E3%81%A3%E3%81%A6%E3%81%8A%E3%81%8D%E3%81%9F%E3%81%84">知っておきたい</h2><h2 id="%E3%81%AE%E3%82%AD%E3%83%9B%E3%83%B3"><em>Scala</em>のキホン</h2><br />
+<h3 id="%23histudy+Vol.6">#histudy Vol.6</h3></div>
+      </div><div class="content" id="slide-1">
+       <div class="container"><h1 id="%E8%87%AA%E5%B7%B1%E7%B4%B9%E4%BB%8B%EF%BC%881%2F2%EF%BC%89">自己紹介（1/2）</h1><ul><li><a  href="http://twitter.com/shora_kujira16">@shora_kujira16</a>
+</li></ul></div>
+      </div><div class="content" id="slide-2">
+       <div class="container"><h1 id="%E8%87%AA%E5%B7%B1%E7%B4%B9%E4%BB%8B%EF%BC%882%2F2%EF%BC%89">自己紹介（2/2）</h1><ul><li>Scalaはまだ検証中
+</li><li>ちゃんとした物をそろそろ作りたい
+</li></ul></div>
+      </div><div class="content" id="slide-3">
+       <div class="container"><h2 id="%E5%A5%BD%E3%81%8D%E3%81%AA%E3%82%82%E3%81%AE">好きなもの</h2><h1 id=""><strong>競技プログラミング</strong></h1></div>
+      </div><div class="content" id="slide-4">
+       <div class="container"><h2 id="%E3%81%AE%E3%83%81%E3%83%BC%E3%83%A0%E3%81%8C"><em>ACM-ICPC</em>のチームが</h2><h2 id="%E7%B5%84%E3%82%81%E3%81%BE%E3%81%97%E3%81%9F%E3%80%82">組めました。</h2><br />
+<h2 id="%E6%98%8E%E6%97%A5%E3%81%8C%E5%88%9D%E9%99%A3%EF%BC%81">明日が初陣！</h2></div>
+      </div><div class="content" id="slide-5">
+       <div class="container"><h3 id="%E4%BB%8A%E5%BE%8C%E8%81%9E%E3%81%8D%E3%81%9F%E3%81%84%E5%86%85%E5%AE%B9">今後聞きたい内容</h3><h2 id="%E3%80%8C%E3%81%84%E3%81%BE%E3%81%95%E3%82%89%E5%A7%8B%E3%82%81%E3%82%8B">「いまさら始める</h2><h2 id="GUI%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E3%80%8D">GUIプログラミング」</h2></div>
+      </div><div class="content" id="slide-6">
+       <div class="container"><h2 id="%E3%81%8A%E5%93%81%E6%9B%B8%E3%81%8D">お品書き</h2><ol><li><em>Scalaの現状</em>
+</li><li>特徴＆文法のはなし
+</li><li>開発環境について（時間があったら）
+</li><li>Scalaのアツい分野
+</li></ol></div>
+      </div><div class="content" id="slide-7">
+       <div class="container"><h1 id="Scala%E3%81%A3%E3%81%A6%E3%81%AA%E3%81%AB%EF%BC%9F">Scalaってなに？</h1></div>
+      </div><div class="content" id="slide-8">
+       <div class="container"><h1 id="lable+nguage"><em>Sca</em>lable <em>la</em>nguage</h1></div>
+      </div><div class="content" id="slide-9">
+       <div class="container"><h1 id="%E4%BD%BF%E3%81%84%E6%8D%A8%E3%81%A6%E3%81%AE">使い捨ての</h1><h1 id="%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%97%E3%83%88%E3%81%8B%E3%82%89">スクリプトから</h1><h1 id="%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC%E3%82%B5%E3%82%A4%E3%83%89%E3%81%BE%E3%81%A7">サーバーサイドまで</h1></div>
+      </div><div class="content" id="slide-10">
+       <div class="container"><h2 id="%E8%AA%AD%E3%81%BF%E6%96%B9">読み方</h2><ul><li>すから？
+</li><li>すかーら？
+</li><li>すけいら？
+</li></ul></div>
+      </div><div class="content" id="slide-11">
+       <div class="container"><h3 id="%E3%81%A4%E3%81%8F%E3%81%A3%E3%81%9F%E3%81%B2%E3%81%A8">つくったひと</h3><h2 id="Martin+Odersky">Martin Odersky</h2><p>→ Javaの<a  href="">ジェネリクス</a>を作ったエラい人
+</p><p>ArrayList<em>&lt;Integer&gt;</em> list = new …
+</p><br />
+<p>→ <strong>小田好</strong>先生？
+</p></div>
+      </div><div class="content" id="slide-12">
+       <div class="container"><h1 id="%E3%80%8C%E3%81%9D%E3%81%AE%E8%A8%80%E8%AA%9E%E3%81%A3%E3%81%A6">「その言語って</h1><h1 id="%E4%BA%BA%E6%B0%97%E3%81%AA%E3%81%AE%EF%BC%9F%E3%80%8D">人気なの？」</h1></div>
+      </div><div class="content" id="slide-13">
+       <div class="container"><p><img alt=""  src="introduction/toibe.png" />
+</p></div>
+      </div><div class="content" id="slide-14">
+       <div class="container"><p><img alt=""  src="introduction/toibe-upper.png" />
+</p></div>
+      </div><div class="content" id="slide-15">
+       <div class="container"><p><img alt=""  src="hello/toibe-ranking.jpg" />
+</p></div>
+      </div><div class="content" id="slide-16">
+       <div class="container"><h1 id="%E3%80%8C%E3%81%88%E3%81%A3%E3%80%8D">「えっ」</h1></div>
+      </div><div class="content" id="slide-17">
+       <div class="container"><h1 id="%E3%80%8C%E6%9C%AC%E5%BD%93%E3%81%AB%E5%A4%A7%E4%B8%88%E5%A4%AB%EF%BC%9F%E3%80%8D">「本当に大丈夫？」</h1></div>
+      </div><div class="content" id="slide-18">
+       <div class="container"><p><img alt=""  src="hello/typesafe-top.jpg" />
+</p></div>
+      </div><div class="content" id="slide-19">
+       <div class="container"><p><img alt=""  src="hello/typesafe-company.jpg" />
+</p></div>
+      </div><div class="content" id="slide-20">
+       <div class="container"><p><img alt=""  src="hello/twitter-github.jpg" />
+</p></div>
+      </div><div class="content" id="slide-21">
+       <div class="container"><p><img alt=""  src="hello/twitter-scala1.jpg" />
+</p></div>
+      </div><div class="content" id="slide-22">
+       <div class="container"><p><img alt=""  src="hello/twitter-scala2.jpg" />
+</p></div>
+      </div><div class="content" id="slide-23">
+       <div class="container"><p><img alt=""  src="hello/biglobe-blog.jpg" />
+</p></div>
+      </div><div class="content" id="slide-24">
+       <div class="container"><p><img alt=""  src="hello/biglobe-scala.jpg" />
+</p></div>
+      </div><div class="content" id="slide-25">
+       <div class="container"><h2 id="%E6%97%A5%E6%9C%ACScala">日本Scala</h2><h2 id="%E3%83%A6%E3%83%BC%E3%82%B6%E3%83%BC%E3%82%BA%E3%82%B0%E3%83%AB%E3%83%BC%E3%83%97">ユーザーズグループ</h2><h2 id="%EF%BC%882011%2F12+%E3%80%9C%EF%BC%89"><em>ScalaJP</em>（2011/12 〜）</h2></div>
+      </div><div class="content" id="slide-26">
+       <div class="container"><p><img alt="scaladays"  src="hello/scala-days.jpg" />
+</p></div>
+      </div><div class="content" id="slide-27">
+       <div class="container"><ul><li>最新安定版: 2.9.2
+</li><li>→ 2.10？
+</li></ul><p>今週の水曜日に Milestone-4 が出た
+</p><p>近いうちにRC版が出る？
+</p></div>
+      </div><div class="content" id="slide-28">
+       <div class="container"><p><img alt=""  src="hello/bigwave.png" />
+</p></div>
+      </div><div class="content" id="slide-29">
+       <div class="container"><h2 id="%E3%81%8A%E5%93%81%E6%9B%B8%E3%81%8D">お品書き</h2><ol><li>Scalaの現状
+</li><li><em>特徴＆文法のはなし</em>
+</li><li>開発環境について
+</li><li>Scalaのアツい分野
+</li></ol></div>
+      </div><div class="content" id="slide-30">
+       <div class="container"><ol><li><em>Java</em>のVM上で動作
+</li><li><strong>全て</strong>がオブジェクト
+</li><li>シンタックス・シュガーが充実
+</li><li><a  href="">オブジェクト指向言語</a>と<em>関数型言語</em>を統合
+</li><li>静的（型システムが超強力）
+</li></ol></div>
+      </div><div class="content" id="slide-31">
+       <div class="container"><h1 id="%E3%81%AEVM%28JVM%29%E3%81%A7"><em>Java</em>のVM(JVM)で</h1><h1 id="%E5%8B%95%E4%BD%9C%E3%81%99%E3%82%8B">動作する</h1></div>
+      </div><div class="content" id="slide-32">
+       <div class="container"><h2 id="JVM%E4%B8%8A%E3%81%A7%E5%8B%95%E3%81%8F%E8%A8%80%E8%AA%9E">JVM上で動く言語</h2><ul><li>Java
+</li><li>Groovy
+</li><li>Jruby
+</li><li>Jython
+</li><li>Clojure
+</li><li><em>Scala</em>
+</li></ul><p>ほかにもたくさん！
+</p></div>
+      </div><div class="content" id="slide-33">
+       <div class="container"><h2 id="%E4%BD%95%E3%81%8C%E3%81%86%E3%82%8C%E3%81%97%E3%81%84%EF%BC%9F">何がうれしい？</h2><ul><li><p>Javaのファイルがそのまま使える
+</p><ul><li>Java用のライブラリ
+</li><li>過去に書いたJavaのコード
+</li></ul></li></ul><br />
+<ul><li><p>その逆も
+</p><ul><li>JavaからScalaコードを呼び出し
+</li></ul></li></ul></div>
+      </div><div class="content" id="slide-34">
+       <div class="container"><h3 id="%E3%83%A9%E3%82%A4%E3%83%96%E3%82%B3%E3%83%BC%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0%E3%82%84%E3%82%8A%E3%81%BE%E3%81%99">ライブコーディングやります</h3><h2 id="%E4%BB%8A%E3%81%8B%E3%82%89%E3%82%84%E3%82%8B%E3%81%93%E3%81%A8">今からやること</h2><ul><li>Javaのライブラリを使いたいので、Twitter4Jを使います
+</li><li><em>#histudy</em> タグの付いたツイートを拾ってみる
+</li></ul></div>
+      </div><div class="content" id="slide-35">
+       <div class="container"><h1 id="%E3%81%AE%E5%A0%B4%E5%90%88"><em>Java</em>の場合</h1></div>
+      </div><div class="content" id="slide-36">
+       <div class="container"><pre><code class="prettyprint lang-java">import twitter4j.*;
+import java.util.List;
+
+// main関数
+Twitter twitter =
+    new TwitterFactory().getInstance();
+
+Query query = new Query();
+query.setQuery(&quot;#histudy&quot;);
+</code></pre></div>
+      </div><div class="content" id="slide-37">
+       <div class="container"><pre><code class="prettyprint lang-java">try {
+  List&lt;Tweet&gt; result =
+    twitter.search(query).getTweets();
+
+  for(Tweet tweet : result) {
+    System.out.println(&quot;--------------------&quot;);
+    System.out.println(tweet.getFromUser());
+    System.out.println(tweet.getText());
+  }
+} catch(TwitterException e) {
+  e.printStackTrace();
+}
+		
+</code></pre></div>
+      </div><div class="content" id="slide-38">
+       <div class="container"><h2 id="%E5%AE%9F%E8%A1%8C%E6%96%B9%E6%B3%95">実行方法</h2><ul><li>コンパイル → <code>scala</code> クラス名
+</li><li>スクリプト形式 → <code>scala</code> ファイル名 ←<em>コレでやる</em>
+</li><li>REPL（対話環境）
+</li></ul></div>
+      </div><div class="content" id="slide-39">
+       <div class="container"><h1 id="%E5%AE%9F%E6%BC%94">実演</h1></div>
+      </div><div class="content" id="slide-40">
+       <div class="container"><h1 id="%E3%81%AE%E5%A0%B4%E5%90%88"><a  href="">Scala</a>の場合</h1></div>
+      </div><div class="content" id="slide-41">
+       <div class="container"><pre><code class="prettyprint lang-scala">import twitter4j._
+import scala.collection.JavaConversions._
+
+val twitter =
+    new TwitterFactory().getInstance
+
+val query = new Query()
+query.setQuery(&quot;#histudy&quot;)
+</code></pre></div>
+      </div><div class="content" id="slide-42">
+       <div class="container"><pre><code class="prettyprint lang-scala">val result =
+    twitter.search(query).getTweets
+
+result.foreach { tweet =&gt;
+  println(&quot;-&quot; * 20)
+  println(tweet.getFromUser)
+  println(tweet.getText)
+}
+</code></pre></div>
+      </div><div class="content" id="slide-43">
+       <div class="container"><h3 id="%E8%A6%8B%E6%89%80%E3%81%8C%E5%A4%9A%E3%81%99%E3%81%8E%E3%82%8B%E3%81%AE%E3%81%A7">見所が多すぎるので</h3><ul><li>import文
+</li><li>型推論
+</li><li>例外処理
+</li><li>for文
+</li><li>高階関数
+</li><li>暗黙の型変換
+</li></ul></div>
+      </div><div class="content" id="slide-44">
+       <div class="container"><h3 id="%E3%81%93%E3%82%8C%E3%81%A0%E3%81%91%E3%81%AB%E3%81%97%E3%81%A6%E3%81%8F%E3%81%A0%E3%81%95%E3%81%84orz">これだけにしてくださいorz</h3><ul><li>import文
+</li><li><em>型推論</em>
+</li><li>例外処理
+</li><li><em>for文</em>
+</li><li><em>高階関数</em>
+</li><li><em>暗黙の型変換</em>
+</li></ul></div>
+      </div><div class="content" id="slide-45">
+       <div class="container"><h1 id="%E6%AF%94%E8%BC%83">比較</h1></div>
+      </div><div class="content" id="slide-46">
+       <div class="container"><pre><code class="prettyprint lang-java">Twitter twitter =
+    new TwitterFactory().getInstance();
+</code></pre><br />
+<p>　　↓
+</p><br />
+<pre><code class="prettyprint lang-scala">val twitter =
+    new TwitterFactory().getInstance
+</code></pre></div>
+      </div><div class="content" id="slide-47">
+       <div class="container"><h2 id="%E8%A6%8B%E3%81%A9%E3%81%93%E3%82%8D">見どころ</h2><ul><li>変数の宣言
+</li><li>型推論
+</li><li>いろいろ省略
+</li></ul></div>
+      </div><div class="content" id="slide-48">
+       <div class="container"><h1 id="%E5%A4%89%E6%95%B0%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6">変数について</h1></div>
+      </div><div class="content" id="slide-49">
+       <div class="container"><ul><li>型はコロンの後ろに
+</li></ul><pre><code class="prettyprint lang-java">int i;
+</code></pre><br />
+<p>　　↓
+</p><br />
+<pre><code class="prettyprint lang-scala">var i: Int
+</code></pre></div>
+      </div><div class="content" id="slide-50">
+       <div class="container"><ul><li><em>var</em>は普通の変数
+</li><li><strong>val</strong>は再代入禁止（const, final）
+</li></ul><br />
+<pre><code class="prettyprint lang-scala">var a: String = &quot;foo&quot;
+a = &quot;bar&quot;
+
+val b: String = &quot;foo&quot;
+b = &quot;bar&quot; // →コンパイルエラー
+</code></pre></div>
+      </div><div class="content" id="slide-51">
+       <div class="container"><h1 id="%E5%9E%8B%E6%8E%A8%E8%AB%96">型推論</h1><ul><li>変数の型
+</li><li>関数の戻り値の型
+</li></ul><h3 id="%E6%9B%B8%E3%81%8B%E3%81%AA%E3%81%8F%E3%81%A6%E3%82%82%EF%BC%88%E3%81%A0%E3%81%84%E3%81%9F%E3%81%84%EF%BC%89%E8%A3%9C%E5%AE%8C">書かなくても（だいたい）補完</h3></div>
+      </div><div class="content" id="slide-52">
+       <div class="container"><h2 id="Java%E3%81%A0%E3%81%A8%E3%83%BB%E3%83%BB%E3%83%BB">Javaだと・・・</h2><pre><code class="prettyprint lang-java">ArrayList&lt;Integer&gt; list =
+	new ArrayList&lt;Integer&gt;();
+</code></pre></div>
+      </div><div class="content" id="slide-53">
+       <div class="container"><h2 id="Java+7%E3%81%A7%E3%81%AF">Java 7では</h2><pre><code class="prettyprint lang-java">ArrayList&lt;Integer&gt; list =
+	new ArrayList&lt;&gt;();
+</code></pre></div>
+      </div><div class="content" id="slide-54">
+       <div class="container"><h2 id="Scala%E3%81%A7%E3%81%AF">Scalaでは</h2><p><code>val list</code><em>: ArrayList[Int]</em> = <code>new ArrayList[Int]()</code>
+</p><br />
+<p>　　↓
+</p><br />
+<p><code>val list = new ArrayList[Int]()</code>
+</p></div>
+      </div><div class="content" id="slide-55">
+       <div class="container"><h1 id="%E5%8F%B3%E8%BE%BA%E3%81%8B%E3%82%89">右辺から</h1><h1 id="%E5%B7%A6%E8%BE%BA%E3%81%AE%E5%9E%8B%E3%82%92">左辺の型を</h1><h1 id="%E6%8E%A8%E6%B8%AC%E3%81%97%E3%81%A6%E3%81%8F%E3%82%8C%E3%82%8B">推測してくれる</h1></div>
+      </div><div class="content" id="slide-56">
+       <div class="container"><h2 id=""><em>※注意※</em></h2><h2 id="%E5%9E%8B%E3%82%92%E6%9B%B8%E3%81%84%E3%81%9F%E3%81%BB%E3%81%86%E3%81%8C">型を書いたほうが</h2><h2 id="%E5%88%86%E3%81%8B%E3%82%8A%E3%82%84%E3%81%99%E3%81%84%E3%81%93%E3%81%A8%E3%82%82%E5%A4%9A%E3%81%84">分かりやすいことも多い</h2></div>
+      </div><div class="content" id="slide-57">
+       <div class="container"><h3 id="%E3%80%8C%E5%9E%8B%E3%81%8C%E5%8B%95%E7%9A%84%E3%81%AB%E5%A4%89%E3%82%8F%E3%82%8B%E3%80%8D">「型が動的に変わる」</h3><h3 id="%E3%80%80%E3%81%A8%E3%81%84%E3%81%86%E3%82%8F%E3%81%91%E3%81%A7%E3%81%AF%E3%81%AA%E3%81%84">　というわけではない</h3><pre><code class="prettyprint lang-scala">// ↓Int型
+var s = 123
+// ↓String型
+s = &quot;foo&quot; // =&gt; コンパイルエラー
+</code></pre></div>
+      </div><div class="content" id="slide-58">
+       <div class="container"><h1 id="%E5%85%83%E3%81%AE%E8%A9%B1%E3%81%AB">元の話に</h1><h1 id="%E6%88%BB%E3%82%8A%E3%81%BE%E3%81%99">戻ります</h1></div>
+      </div><div class="content" id="slide-59">
+       <div class="container"><pre><code class="prettyprint lang-java">Twitter twitter =
+    new TwitterFactory().getInstance();
+</code></pre><br />
+<p>　　↓
+</p><br />
+<pre><code class="prettyprint lang-scala">val twitter =
+    new TwitterFactory().getInstance
+</code></pre></div>
+      </div><div class="content" id="slide-60">
+       <div class="container"><h1 id="%E3%82%BB%E3%83%9F%E3%82%B3%E3%83%AD%E3%83%B3%E3%81%AF">セミコロンは</h1><h1 id="%E7%9C%81%E7%95%A5%E3%81%A7%E3%81%8D%E3%82%8B">省略できる</h1><pre><code class="prettyprint lang-java">print(foo);
+</code></pre><p>↓
+</p><pre><code class="prettyprint lang-scala">print(foo)
+</code></pre></div>
+      </div><div class="content" id="slide-61">
+       <div class="container"><h2 id="%E5%BC%95%E6%95%B0%E3%82%92%E5%8F%96%E3%82%89%E3%81%AA%E3%81%84%E9%96%A2%E6%95%B0%E3%81%AF">引数を取らない関数は</h2><h2 id="%E3%82%AB%E3%83%83%E3%82%B3%E8%A6%81%E3%82%89%E3%81%AA%E3%81%84">カッコ要らない</h2><pre><code class="prettyprint lang-scala">val twitter =
+    new TwitterFactory().getInstance()
+</code></pre><p>　　↓
+</p><pre><code class="prettyprint lang-scala">val twitter =
+    new TwitterFactory.getInstance
+</code></pre></div>
+      </div><div class="content" id="slide-62">
+       <div class="container"><h2 id="%E3%83%89%E3%83%83%E3%83%88%E3%81%AE%E7%9C%81%E7%95%A5">ドットの省略</h2><pre><code class="prettyprint lang-scala">val twitter =
+    new TwitterFactory.getInstance
+</code></pre><p>　　↓
+</p><pre><code class="prettyprint lang-scala">val twitter =
+    new TwitterFactory getInstance
+</code></pre></div>
+      </div><div class="content" id="slide-63">
+       <div class="container"><h2 id=""><em>※注意※</em></h2><ul><li>境界が不明瞭だといろいろ面倒…
+</li><li>読みやすさとのバランスも大事
+</li></ul></div>
+      </div><div class="content" id="slide-64">
+       <div class="container"><h1 id="%E6%AC%A1">次</h1><ul><li>暗黙の型変換
+</li><li>高階関数
+</li><li>for
+</li></ul></div>
+      </div><div class="content" id="slide-65">
+       <div class="container"><h3 id="%E5%87%BA%E5%8A%9B%E3%81%AE%E3%83%AB%E3%83%BC%E3%83%97%E9%83%A8%E5%88%86">出力のループ部分</h3><pre><code class="prettyprint lang-scala">// result : java.util.List&lt;Tweet&gt;
+
+result.foreach { tweet =&gt;
+  // 表示する処理
+}
+</code></pre></div>
+      </div><div class="content" id="slide-66">
+       <div class="container"><h3 id="%E3%81%A7%E6%9B%B8%E3%81%84%E3%81%A6%E3%82%82%E8%89%AF%E3%81%8B%E3%81%A3%E3%81%9F%E3%81%8C%E2%80%A6"><strong>for</strong>で書いても良かったが…</h3><pre><code class="prettyprint lang-scala">// result : java.util.List&lt;Tweet&gt;
+
+result.foreach { tweet =&gt;
+  // 表示する処理
+}
+
+for(tweet &lt;- result) {
+  // 表示する処理
+}
+</code></pre></div>
+      </div><div class="content" id="slide-67">
+       <div class="container"><pre><code class="prettyprint lang-scala">result.foreach { tweet =&gt;
+  // 表示する処理
+}
+</code></pre><h3 id="%E3%81%A0%E3%81%A8%E2%80%A6"><em>Ruby</em>だと…</h3><pre><code class="prettyprint lang-ruby">result.each do |tweet|
+  # 表示する処理
+end
+</code></pre></div>
+      </div><div class="content" id="slide-68">
+       <div class="container"><h3 id="%E4%BD%95%E3%81%8B%E6%B0%97%E3%81%A5%E3%81%8D%E3%81%BE%E3%81%9B%E3%82%93%E3%81%8B%EF%BC%9F">何か気づきませんか？</h3><pre><code class="prettyprint lang-scala">// result : java.util.List&lt;Tweet&gt;
+
+result.foreach { tweet =&gt;
+  // 表示する処理
+}
+</code></pre></div>
+      </div><div class="content" id="slide-69">
+       <div class="container"><p>// result : java.util.List&lt;Tweet&gt;
+</p><br />
+<p>result.foreach <em>{ tweet =&gt;</em>
+</p><p>　// 表示処理
+</p><p><em>}</em>
+</p><br />
+<h3 id="%E3%81%93%E3%81%AE%E9%83%A8%E5%88%86%E3%82%82%E6%B0%97%E3%81%AB%E3%81%AA%E3%82%8B%E3%81%8C%E2%80%A6">この部分も気になるが…</h3></div>
+      </div><div class="content" id="slide-70">
+       <div class="container"><p>// result : java.util.List&lt;Tweet&gt;
+</p><br />
+<p>result.<em>foreach</em> { tweet =&gt;
+</p><p>　// 表示処理
+</p><p>}
+</p><br />
+<h3 id="List%E3%81%AB%E3%81%93%E3%82%93%E3%81%AA%E3%83%A1%E3%82%BD%E3%83%83%E3%83%89%E3%81%82%E3%81%A3%E3%81%9F%E3%81%A3%E3%81%91%EF%BC%9F">Listにこんなメソッドあったっけ？</h3></div>
+      </div><div class="content" id="slide-71">
+       <div class="container"><h2 id="Java%E3%81%AEList%E3%81%AB%E3%81%AF">JavaのListには</h2><h2 id="%E3%82%82%E3%81%A1%E3%82%8D%E3%82%93%E7%84%A1%E3%81%84">もちろん無い</h2></div>
+      </div><div class="content" id="slide-72">
+       <div class="container"><pre><code class="prettyprint lang-scala">import twitter4j._
+import scala.collection.JavaConversions._
+
+val twitter =
+    new TwitterFactory().getInstance
+</code></pre><br />
+<p>いったいどこから？
+</p></div>
+      </div><div class="content" id="slide-73">
+       <div class="container"><p>import twitter4j._
+</p><p>import <em>scala.collection.</em>
+　　　　　<em>JavaConversions._</em>
+</p><br />
+<p>val twitter =
+</p><p>　　new TwitterFactory().getInstance
+</p><h2 id="%EF%BC%81">！</h2></div>
+      </div><div class="content" id="slide-74">
+       <div class="container"><pre><code class="prettyprint lang-scala">implicit def asScalaBuffer[A](l : ju.List[A]):
+	mutable.Buffer[A] = l match {
+  case MutableBufferWrapper(wrapped) =&gt; wrapped
+  case _ =&gt;new JListWrapper(l)
+}
+</code></pre><p>こんなコードがあった
+</p></div>
+      </div><div class="content" id="slide-75">
+       <div class="container"><h3 id="%E6%9A%97%E9%BB%99%E3%81%AE%E5%9E%8B%E5%A4%89%E6%8F%9B%28Implicit+Conversion%29">暗黙の型変換(Implicit Conversion)</h3><pre><code>必要に応じて他のクラスに
+自動で変換するための関数を定義できる
+</code></pre><br />
+<h3 id="%E4%BE%8B%EF%BC%9AInt%E3%81%AE%E5%A0%B4%E5%90%88">例：Intの場合</h3><p>↓<code>scala.Predef</code> に定義
+</p><pre><code class="prettyprint lang-scala">implicit def intWrapper(x: Int): RichInt =
+	new RichInt(x)
+</code></pre></div>
+      </div><div class="content" id="slide-76">
+       <div class="container"><h2 id="%E4%BD%BF%E7%94%A8%E4%BE%8B">使用例</h2><pre><code class="">(-123).abs // =&gt; 123
+
+1.to(10)
+// =&gt; Range(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+// ↑あとで使う！
+</code></pre><pre><code>
+</code></pre></div>
+      </div><div class="content" id="slide-77">
+       <div class="container"><pre><code class="prettyprint lang-scala">// result : java.util.List&lt;Tweet&gt;
+
+result.foreach { tweet =&gt;
+  // 表示する処理
+}
+</code></pre><p><code>result</code> は <em>IterableLike</em> に変換された
+</p></div>
+      </div><div class="content" id="slide-78">
+       <div class="container"><pre><code class="prettyprint lang-scala">result.foreach { tweet =&gt;
+  println(&quot;-&quot; * 20)
+  println(tweet.getFromUser)
+  println(tweet.getText)
+}
+</code></pre><h3 id="%E9%96%A2%E6%95%B0%E5%9E%8B%E3%81%AF%E3%81%98%E3%81%BE%E3%82%8B%E3%82%88%E3%83%BC%EF%BC%81">関数型はじまるよー！</h3></div>
+      </div><div class="content" id="slide-79">
+       <div class="container"><h3 id="Scala%E3%81%A7%E3%81%AF">Scalaでは</h3><h1 id="%E2%88%88"><em>関数</em> ∈ <strong>値</strong></h1><h3 id="%E3%81%A8%E3%80%81%E8%80%83%E3%81%88%E3%81%A6%E8%89%AF%E3%81%84">と、考えて良い</h3></div>
+      </div><div class="content" id="slide-80">
+       <div class="container"><ul><li>変数に関数を入れられる
+</li><li>関数の<em>引数</em>に関数をとれる
+</li><li>関数の<em>返り値</em>として関数を返せる
+</li></ul></div>
+      </div><div class="content" id="slide-81">
+       <div class="container"><ul><li>変数に関数を入れられる
+</li><li><strong>関数の引数に関数をとれる</strong>←コレを説明
+</li><li>関数の<em>返り値</em>として関数を返せる
+</li></ul><br />
+<h3 id="%E3%82%B3%E3%83%AC%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%B3%E3%81%AE%E6%93%8D%E4%BD%9C%E3%81%AB%E4%BE%BF%E5%88%A9%EF%BC%81">コレクションの操作に便利！</h3></div>
+      </div><div class="content" id="slide-82">
+       <div class="container"><pre><code class="prettyprint lang-scala">def foreach[U](f: A =&gt; U)
+</code></pre><br />
+<p><strong>foreach</strong> は
+</p><p>「値を１つ取って何かする」関数をとる
+</p></div>
+      </div><div class="content" id="slide-83">
+       <div class="container"><pre><code class="prettyprint lang-scala">def puts(x: Int) {
+    println(x)
+}
+
+List(1, 2, 3).foreach(puts)
+</code></pre><br />
+<h3 id="%E3%81%93%E3%82%8C%E3%81%A7%E3%82%82%E8%89%AF%E3%81%84%E3%81%8C%E2%80%A6">これでも良いが…</h3></div>
+      </div><div class="content" id="slide-84">
+       <div class="container"><pre><code class="prettyprint lang-scala">List(1, 2, 3).foreach { (x: Int) =&gt;
+    println(x)
+}
+</code></pre><br />
+<h3 id="%E3%82%84%E3%81%A3%E3%81%B1%E3%82%8A%E7%84%A1%E5%90%8D%E9%96%A2%E6%95%B0%EF%BC%81">やっぱり無名関数！</h3></div>
+      </div><div class="content" id="slide-85">
+       <div class="container"><h3 id="%E4%BE%8B">例</h3><p><a  href="">map</a>(f: <em>A</em> =&gt; <strong>B</strong>)
+</p><ol><li><em>A</em>型の値を引数に取って
+</li><li><strong>B</strong>型の値に変換する
+</li></ol><p>という関数を引数に取る
+</p><br />
+<pre><code class="prettyprint lang-scala">List(1, 2, 3).map((x: Int) =&gt; 2 * x)
+// =&gt; List(2, 4, 6)
+</code></pre></div>
+      </div><div class="content" id="slide-86">
+       <div class="container"><h3 id="%E4%BE%8B">例</h3><p><a  href="">filter</a>(f: <em>A</em> =&gt; <strong>Boolean</strong>)
+</p><ol><li><em>A</em>型の値を引数に取って
+</li><li>条件に合うか判定する
+</li></ol><p>という関数を引数に取る
+</p><br />
+<pre><code class="prettyprint lang-scala">List(1, 2, 3).filter((x: Int) =&gt; x % 2 != 0)
+// =&gt; List(1, 3)
+</code></pre></div>
+      </div><div class="content" id="slide-87">
+       <div class="container"><h3 id="%E4%BE%8B">例</h3><p><a  href="">exists</a>(f: <em>A</em> =&gt; <strong>Boolean</strong>)
+</p><ol><li><em>A</em>型の値を引数に取って
+</li><li>条件に合うか判定する
+</li></ol><p>という関数を引数に取る
+</p><br />
+<pre><code class="prettyprint lang-scala">List(1, 2, 3).filter((x: Int) =&gt; x &lt; 0)
+// =&gt; false
+</code></pre></div>
+      </div><div class="content" id="slide-88">
+       <div class="container"><pre><code class="prettyprint lang-scala">(x: Int) =&gt; 2 * x
+</code></pre><p>→ <strong>無名関数</strong>
+</p></div>
+      </div><div class="content" id="slide-89">
+       <div class="container"><ul><li>JavaScript
+</li></ul><pre><code class="prettyprint lang-js">function(n) {
+	return 2 * n;
+}
+</code></pre><ul><li>Ruby
+</li></ul><pre><code class="prettyprint lang-ruby">{|x| 2 * x}
+</code></pre></div>
+      </div><div class="content" id="slide-90">
+       <div class="container"><ul><li>引数が１個なのでカッコを外す
+</li></ul><pre><code class="prettyprint lang-scala">map(x: Int =&gt; 2 * x)
+</code></pre><br />
+<ul><li>引数は型推論
+</li></ul><pre><code class="prettyprint lang-scala">map(x =&gt; 2 * x)
+</code></pre></div>
+      </div><div class="content" id="slide-91">
+       <div class="container"><ul><li>アンダースコアを使う（Perlの<em>$_</em>）
+</li></ul><pre><code class="prettyprint lang-scala">map(2 * _)
+</code></pre><br />
+<p>・ 2.* は引数を１個とる関数である
+</p><pre><code class="prettyprint lang-scala">map(2 *)
+</code></pre></div>
+      </div><div class="content" id="slide-92">
+       <div class="container"><h1 id="for%E6%96%87%E3%81%AE%E8%A9%B1">for文の話</h1><pre><code class="prettyprint lang-scala">for(tweet &lt;- result) {
+  // 表示する処理
+}
+</code></pre></div>
+      </div><div class="content" id="slide-93">
+       <div class="container"><h2 id="%E3%81%AEfor%E6%96%87%E3%81%AF"><a  href="">Scala</a>のfor文は</h2><h2 id="%E3%81%A7%E8%A8%80%E3%81%86"><em>Java</em>で言う<strong>foreach</strong></h2></div>
+      </div><div class="content" id="slide-94">
+       <div class="container"><h2 id=""><em>Java</em></h2><br />
+<pre><code class="prettyprint lang-java">// list := List&lt;Integer&gt; { 1, 2, 3 }
+
+for( int i : list ) {
+    // なにかする
+}
+</code></pre></div>
+      </div><div class="content" id="slide-95">
+       <div class="container"><h2 id=""><a  href="">Scala</a></h2><br />
+<pre><code class="prettyprint lang-scala">// list := List[Int] ( 1, 2, 3 )
+
+for( i &lt;- list ) {
+    // なにかする
+}
+</code></pre></div>
+      </div><div class="content" id="slide-96">
+       <div class="container"><h2 id="%E6%99%AE%E9%80%9A%E3%81%AE%E7%B9%B0%E3%82%8A%E8%BF%94%E3%81%97">普通の繰り返し</h2><br />
+<pre><code class="prettyprint lang-scala">for( i &lt;- 1 to 10 ) {
+    println(i)
+}
+</code></pre><br />
+<p><code>1 to 10</code> は 1.to(10)の略記法
+</p><p>暗黙の型変換でRangeオブジェクトができる
+</p></div>
+      </div><div class="content" id="slide-97">
+       <div class="container"><pre><code class="prettyprint lang-scala">for(i &lt;- 1 to 10)
+</code></pre><p>↓
+</p><pre><code class="prettyprint lang-scala">for(i &lt;- (new RichInt(1)).to(10))
+</code></pre><p>↓
+</p><pre><code class="prettyprint lang-scala">for(i &lt;- Range.inclusive(1, 10))
+</code></pre></div>
+      </div><div class="content" id="slide-98">
+       <div class="container"><h2 id="%E3%81%A7%E3%82%82%E3%80%81%E3%81%9D%E3%82%8C%E3%81%A0%E3%81%91%E3%81%98%E3%82%83%E3%81%AA%E3%81%84">でも、それだけじゃない</h2></div>
+      </div><div class="content" id="slide-99">
+       <div class="container"><pre><code class="prettyprint lang-scala">val s = for( i &lt;- List(1, 2, 3) )
+	    yield i * 2
+
+// s == List(2, 4, 6)
+</code></pre></div>
+      </div><div class="content" id="slide-100">
+       <div class="container"><h2 id="for%E3%81%AE%E4%B8%AD%E3%81%ABif">forの中にif</h2><pre><code class="prettyprint lang-scala">for {
+  i &lt;- List(3, 1, 4, 1, 5)
+  if i &lt;= 3
+} println(i)
+</code></pre></div>
+      </div><div class="content" id="slide-101">
+       <div class="container"><h2 id="N%E9%87%8D%E3%83%AB%E3%83%BC%E3%83%97">N重ループ</h2><pre><code class="prettyprint lang-scala">for {
+  i &lt;- 1 to 9
+  j &lt;- 1 to 9
+} println(i * j)
+
+// =&gt; 九九の表示
+</code></pre></div>
+      </div><div class="content" id="slide-102">
+       <div class="container"><h3 id="%E3%81%AA%E3%82%93%E3%81%8B%E4%BC%BC%E3%81%A6%E3%81%AA%E3%81%84%EF%BC%9F">なんか似てない？</h3><pre><code class="prettyprint lang-scala">for( i &lt;- List(2, 7, 1, 8) )
+  println(i)
+</code></pre><br />
+<pre><code class="prettyprint lang-scala">List(2, 7, 1, 8).foreach { i =&gt;
+  println(i)
+}
+</code></pre></div>
+      </div><div class="content" id="slide-103">
+       <div class="container"><h3 id="%E3%81%AA%E3%82%93%E3%81%8B%E4%BC%BC%E3%81%A6%E3%81%AA%E3%81%84%EF%BC%9F">なんか似てない？</h3><pre><code class="prettyprint lang-scala">val s = for( i &lt;- List(1, 2, 3) )
+	    yield i * 2
+</code></pre><br />
+<pre><code class="prettyprint lang-scala">val s = List(1, 2, 3).map { i =&gt; i * 2 }
+</code></pre></div>
+      </div><div class="content" id="slide-104">
+       <div class="container"><h3 id="%E3%81%AA%E3%82%93%E3%81%8B%E4%BC%BC%E3%81%A6%E3%81%AA%E3%81%84%EF%BC%9F">なんか似てない？</h3><pre><code class="prettyprint lang-scala">for {
+  i &lt;- List(2, 3, 5, 7)
+  if i &lt;= 3
+} println(i)
+</code></pre><br />
+<pre><code class="prettyprint lang-scala">List(2, 3, 5, 7)
+  .filter { _ &lt;= 3 }
+  .foreach { println _ }
+</code></pre></div>
+      </div><div class="content" id="slide-105">
+       <div class="container"><p>Scalaの<strong>for</strong>は
+</p><ul><li>foreach
+</li><li>map(flatMap)
+</li><li>filter(withFilter)
+</li></ul><p>に変換するシンタックス・シュガー
+</p></div>
+      </div><div class="content" id="slide-106">
+       <div class="container"><p><img alt="haskell"  src="hello2/haskell.jpg" />
+</p><p>某純粋関数型言語みたいなことが…</p></div>
+      </div><div class="content" id="slide-107">
+       <div class="container"><h2 id="%E3%81%8A%E5%93%81%E6%9B%B8%E3%81%8D">お品書き</h2><ol><li>Scalaの現状
+</li><li>特徴＆文法のはなし
+</li><li><em>開発環境について</em>
+</li><li>Scalaのアツい分野
+</li></ol></div>
+      </div><div class="content" id="slide-108">
+       <div class="container"><h2 id="IDE%EF%BC%86%E3%82%A8%E3%83%87%E3%82%A3%E3%82%BF">IDE＆エディタ</h2><ul><li>Eclipse（<a  href="http://scala-ide.org">scala-ide.org</a>）
+</li><li>Intellij IDEA
+</li><li>NetBeans
+</li></ul><br />
+<ul><li>Emacs（Ensime）
+</li><li>Vim（ハイライトとインデントだけ）
+</li></ul></div>
+      </div><div class="content" id="slide-109">
+       <div class="container"><h2 id="%E3%81%A9%E3%82%8C%E3%81%8C%E3%82%AA%E3%82%B9%E3%82%B9%E3%83%A1%EF%BC%9F">どれがオススメ？</h2><ul><li>先を行ってる <em>Intellij IDEA</em>
+</li><li>使い慣れているなら <strong>Eclipse</strong>
+</li></ul></div>
+      </div><div class="content" id="slide-110">
+       <div class="container"><h2 id="%E3%82%88%E3%81%8F%E8%81%9E%E3%81%8F%E9%96%8B%E7%99%BA%E3%82%B9%E3%82%BF%E3%82%A4%E3%83%AB">よく聞く開発スタイル</h2><br />
+<p>「コーディングはIDEで。
+</p><p>ビルドやテスト、
+</p><p>ライブラリの用意は<a  href="">sbt</a>で。」
+</p></div>
+      </div><div class="content" id="slide-111">
+       <div class="container"><h2 id=""><a  href="">sbt</a></h2><ul><li>Simple Build Tool
+</li><li>Scalaのビルドツールのデファクト・スタンダード
+</li><li><strong>Github</strong>でScalaのプロジェクトを見ると、だいたいコレ
+</li></ul></div>
+      </div><div class="content" id="slide-112">
+       <div class="container"><h3 id="%E3%81%A7%E3%81%8D%E3%82%8B%E3%81%93%E3%81%A8">できること</h3><ul><li>変更のあったファイルだけ再ビルド
+</li><li>テストの自動化
+</li><li>リポジトリからライブラリを取ってくる
+</li></ul><br />
+<p>→ 最初は利点が見えにくい？
+</p></div>
+      </div><div class="content" id="slide-113">
+       <div class="container"><h2 id="%E7%92%B0%E5%A2%83%E3%82%92%E6%95%B4%E3%81%88%E3%82%8B%E3%81%AA%E3%82%89">環境を整えるなら</h2><h2 id="ScalaJP%E3%81%A7%E6%A4%9C%E7%B4%A2%EF%BC%81">ScalaJPで検索！</h2></div>
+      </div><div class="content" id="slide-114">
+       <div class="container"><p><img alt=""  src="env/scalajp-top.png" />
+</p></div>
+      </div><div class="content" id="slide-115">
+       <div class="container"><p><img alt=""  src="env/scalajp-wiki.png" /></p></div>
+      </div><div class="content" id="slide-116">
+       <div class="container"><h2 id="%E3%81%8A%E5%93%81%E6%9B%B8%E3%81%8D">お品書き</h2><ol><li>Scalaの現状
+</li><li>特徴＆文法のはなし
+</li><li>開発環境について
+</li><li><em>Scalaのアツい分野</em>
+</li></ol><br />
+<h3 id="%E2%80%BB%E5%80%8B%E4%BA%BA%E7%9A%84%E3%81%AA%E8%A6%96%E7%82%B9%E3%81%AB%E3%82%88%E3%82%8B">※個人的な視点による</h3></div>
+      </div><div class="content" id="slide-117">
+       <div class="container"><h2 id="1.+WEB%E3%83%95%E3%83%AC%E3%83%BC%E3%83%A0%E3%83%AF%E3%83%BC%E3%82%AF">1. WEBフレームワーク</h2></div>
+      </div><div class="content" id="slide-118">
+       <div class="container"><ul><li><p>Scalatra
+</p><p><em>Ruby</em>の<strong>Sinatra</strong>的なもの
+</p></li><li><p>Lift
+</p><p><a  href="">View First</a> という珍しいアーキテクチャ
+</p></li><li><p>Play framework
+</p><p>1.0 → 2.0 のときに <em>Java</em> → <a  href="">Scala</a>
+</p></li></ul></div>
+      </div><div class="content" id="slide-119">
+       <div class="container"><h2 id="2.+%E4%B8%A6%E5%88%97%E5%87%A6%E7%90%86">2. 並列処理</h2><ul><li><p>標準ライブラリが充実
+</p><ul><li>actor
+</li><li>pararell collection
+</li></ul></li></ul></div>
+      </div><div class="content" id="slide-120">
+       <div class="container"><h2 id="3.+%E3%82%82%E3%81%A3%E3%81%A8%E5%BC%B7%E5%8A%9B%E3%81%AA%E8%A8%80%E8%AA%9E%E3%81%AB">3. もっと強力な言語に</h2><ul><li><p>Scala<em>z</em>
+</p><p>Haskellライクなことができる
+</p></li></ul><br />
+<p>┌（┌ ＾o＾）┐モナドォ…
+</p></div>
+      </div><div class="content" id="slide-121">
+       <div class="container"><h2 id="%E3%81%BE%E3%81%A8%E3%82%81">まとめ</h2><ul><li><em>Java</em>と簡単に連携できる
+</li><li>いろいろ省略できる（自己責任）
+</li><li>這いよる<strong>関数型言語</strong>
+</li><li>暗黙の型変換という怪しい機能
+</li><li>乗るしかない、このビッグウェーブに
+</li></ul></div>
+      </div><div class="content" id="slide-122">
+       <div class="container"><h2 id="%E3%81%94%E6%B8%85%E8%81%B4%E3%81%82%E3%82%8A%E3%81%8C%E3%81%A8%E3%81%86%E3%81%94%E3%81%96%E3%81%84%E3%81%BE%E3%81%97%E3%81%9F">ご清聴ありがとうございました</h2></div>
+      </div>
+          </div>
+        </div>
+        <script type="text/javascript" src="js/custom.js?1339897597039"></script>
+      </body>
+    </html>
