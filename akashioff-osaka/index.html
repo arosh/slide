@@ -1,0 +1,180 @@
+<html>
+      <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+        <title>#akashioff in Osaka</title>
+        <link type="text/css" rel="stylesheet" href="assets/css/show.css" />
+        <link type="text/css" rel="stylesheet" href="assets/css/prettify.css" />
+        <script type="text/javascript" src="assets/js/jquery.min.js"></script>
+        <script type="text/javascript" src="assets/js/show.js"></script>
+        <script type="text/javascript" src="assets/js/prettify/prettify.js"></script>
+        <script type="text/javascript" src="assets/js/prettify/lang-apollo.js"></script><script type="text/javascript" src="assets/js/prettify/lang-css.js"></script><script type="text/javascript" src="assets/js/prettify/lang-hs.js"></script><script type="text/javascript" src="assets/js/prettify/lang-lisp.js"></script><script type="text/javascript" src="assets/js/prettify/lang-lua.js"></script><script type="text/javascript" src="assets/js/prettify/lang-ml.js"></script><script type="text/javascript" src="assets/js/prettify/lang-proto.js"></script><script type="text/javascript" src="assets/js/prettify/lang-scala.js"></script><script type="text/javascript" src="assets/js/prettify/lang-sql.js"></script><script type="text/javascript" src="assets/js/prettify/lang-sql.js"></script><script type="text/javascript" src="assets/js/prettify/lang-vb.js"></script><script type="text/javascript" src="assets/js/prettify/lang-vhdl.js"></script><script type="text/javascript" src="assets/js/prettify/lang-wiki.js"></script><script type="text/javascript" src="assets/js/prettify/lang-yaml.js"></script><link type="text/css" rel="stylesheet" href="css/custom.css?1345338488371" />
+      <script type="text/javascript"><!--
+        window.onload=function() { prettyPrint(); };
+      --></script>
+      </head>
+      <body>
+        <div id="slides">
+          <div id="reel">
+            <div class="content" id="slide-0">
+       <div class="container"><h1 id="%E3%82%AA%E3%83%AC%E3%81%AE">オレの<strong>.zshrc</strong></h1><br>
+<h3 id="%23akashioff+in+Osaka">#akashioff in Osaka</h3></div>
+      </div><div class="content" id="slide-1">
+       <div class="container"><h2 id="%E8%87%AA%E5%B7%B1%E7%B4%B9%E4%BB%8B">自己紹介</h2><ul><li><a  href="http://twttr.com/shora_kujira16">@shora_kujira16</a>
+</li><li>大学1年生
+</li><li><em>TopCoder</em>: <strong>arosh</strong> レーティング3ケタ
+</li><li>興味があるもの: Scala / 組み込み
+</li><li>いい加減に免許取れ
+</li></ul></div>
+      </div><div class="content" id="slide-2">
+       <div class="container"><h2 id="%E3%81%A3%E3%81%A6%E3%81%AA%E3%81%AB%EF%BC%9F"><strong>.zshrc</strong>ってなに？</h2><ul><li>Unix向けのコマンドラインシェル <em>zsh</em> の設定ファイル
+</li><li>コピペでもかなり幸せになれる
+</li></ul><p>参考：<a  href="http://news.mynavi.jp/column/zsh/024/index.html">漢のzsh(24)グッバイ野郎ども! コピペではじめるzshファイナル</a>
+</p><ul><li>みんなで設定して幸せになろうぜっ！！！
+</li></ul></div>
+      </div><div class="content" id="slide-3">
+       <div class="container"><h2 id="%E3%81%8A%E5%93%81%E6%9B%B8%E3%81%8D">お品書き</h2><p>zshを半年間使って手放せなくなった<em>怠惰な設定</em>を紹介
+</p><ul><li>大文字小文字を無視
+</li><li>補完候補をリストから選択
+</li><li>ヒストリ検索
+</li><li>cd ..
+</li><li>お手軽解凍コマンド
+</li><li>clipコマンド
+</li></ul></div>
+      </div><div class="content" id="slide-4">
+       <div class="container"><h2 id="%E3%81%8A%E7%9F%A5%E3%82%89%E3%81%9B">お知らせ</h2><ul><li>現在使っている <strong>.zshrc</strong> は <em>Github</em> に上げています
+</li></ul><p>http://github.com/arosh/dotfiles
+</p><ul><li>このスライドも上げる予定
+</li></ul><br>
+<ul><li>だいたいの設定は他のシェルでもできるはず
+</li></ul></div>
+      </div><div class="content" id="slide-5">
+       <div class="container"><h2 id="%E5%A4%A7%E6%96%87%E5%AD%97%E5%B0%8F%E6%96%87%E5%AD%97%E3%82%92%E7%84%A1%E8%A6%96">大文字小文字を無視</h2><p>zstyle ’:completion:*’ matcher-list ‘m:{a-z}={A-Z}’
+</p><br>
+<ul><li><strong>小文字</strong>を入力している間は無視
+</li><li><em>大文字</em>が入力されたら区別する
+</li><li>vimで言えば ignorecase + smartcase
+</li></ul><br>
+<ul><li>bashでは組み込み (set completion-ignore-case on)
+</li><li>ただし、無視するだけ
+</li></ul></div>
+      </div><div class="content" id="slide-6">
+       <div class="container"><h2 id="%E8%A3%9C%E5%AE%8C%E5%80%99%E8%A3%9C%E3%82%92%E3%83%AA%E3%82%B9%E3%83%88%E3%81%8B%E3%82%89%E9%81%B8%E6%8A%9E">補完候補をリストから選択</h2><p>zstyle ’:completion:*:default’ menu select=2
+</p><br>
+<ul><li><em>Tab連打</em>生活が捗りすぎてヤバイ
+</li><li>日本語の入ったファイルを選ぶときに便利
+</li></ul></div>
+      </div><div class="content" id="slide-7">
+       <div class="container"><h2 id="%E3%83%92%E3%82%B9%E3%83%88%E3%83%AA%E6%A4%9C%E7%B4%A2+%281%2F2%29">ヒストリ検索 (1/2)</h2><br>
+<pre><code class="">autoload history-search-end
+zle -N history-beginning-search-backward-end history-search-end
+zle -N history-beginning-search-forward-end history-search-end
+bindkey &quot;^P&quot; history-beginning-search-backward-end
+bindkey &quot;^N&quot; history-beginning-search-forward-end
+</code></pre><br>
+<p>コピペしましょう
+</p></div>
+      </div><div class="content" id="slide-8">
+       <div class="container"><h2 id="%E3%83%92%E3%82%B9%E3%83%88%E3%83%AA%E6%A4%9C%E7%B4%A2+%282%2F2%29">ヒストリ検索 (2/2)</h2><p>$ vim ← ここで <em>Ctrl+P</em> or <strong>Ctrl+N</strong>
+</p><ul><li>今までの履歴から vim で始まるものを順に補完
+</li><li>Ctrl+R よりも便利だと思う (個人的印象)
+</li><li>あまり使わないコマンドにも威力を発揮
+</li></ul></div>
+      </div><div class="content" id="slide-9">
+       <div class="container"><h2 id="cd+..+%281%2F3%29">cd .. (1/3)</h2><br>
+<pre><code class="">function cdup() {
+        echo
+        cd ..
+        zle reset-prompt
+}
+zle -N cdup
+bindkey '^\^' cdup
+</code></pre><br>
+<p>設定の細かい意味は知りません（Ｕ＾ω＾）
+</p></div>
+      </div><div class="content" id="slide-10">
+       <div class="container"><h2 id="cd+..+%282%2F3%29">cd .. (2/3)</h2><br>
+<p><em>Ctrl-^</em> で cd ..
+</p><p>cd .. を使わなすぎてヤバイ
+</p></div>
+      </div><div class="content" id="slide-11">
+       <div class="container"><h2 id="cd+..+%283%2F3%29">cd .. (3/3)</h2><p>効果を検証しましょう
+</p><p>→ キーバインドを使った回数は分からないのでゴメンナサイ
+</p><br>
+<p><code>grep -Ec &quot;^cd&quot; ~/.zsh_history</code>
+</p><p>→ 1355行
+</p><br>
+<p><code>grep -Ec &quot;^cd \.\.&quot; ~/.zsh_history</code>
+</p><p>→ 3行
+</p></div>
+      </div><div class="content" id="slide-12">
+       <div class="container"><h2 id="%E3%81%8A%E6%89%8B%E8%BB%BD%E8%A7%A3%E5%87%8D%E3%82%B3%E3%83%9E%E3%83%B3%E3%83%89">お手軽解凍コマンド</h2></div>
+      </div><div class="content" id="slide-13">
+       <div class="container"><ul><li><em>tar.gz</em>
+</li></ul><p>→ tar zxvf foo.tar.gz
+</p><br>
+<ul><li><strong>tar.bz2</strong>
+</li></ul><p>→ tar xvjf foo.tar.bz2
+</p><br>
+<ul><li><a  href="">zip</a>
+</li></ul><p>→ unzip foo.zip -d foo
+</p><p>だいたい決まってるよねー
+</p></div>
+      </div><div class="content" id="slide-14">
+       <div class="container"><pre><code class="">extract () {
+if [ -f $1 ] ; then
+    case $1 in
+        *.tar.bz2)   tar xvjf $1    ;;
+        *.tar.gz)    tar xvzf $1    ;;
+        *.tar.xz)    tar xvJf $1    ;;
+        *.bz2)       bunzip2 $1     ;;
+        *.rar)       unrar x $1     ;;
+        (略)
+
+alias ex='extract'
+</code></pre></div>
+      </div><div class="content" id="slide-15">
+       <div class="container"><ul><li><em>tar.gz</em>
+</li></ul><p>→ ex foo.tar.gz
+</p><br>
+<ul><li><strong>tar.bz2</strong>
+</li></ul><p>→ ex foo.tar.bz2
+</p><br>
+<ul><li><a  href="">zip</a>
+</li></ul><p>→ ex foo.zip
+</p></div>
+      </div><div class="content" id="slide-16">
+       <div class="container"><h2 id="clip%E3%82%B3%E3%83%9E%E3%83%B3%E3%83%89">clipコマンド</h2></div>
+      </div><div class="content" id="slide-17">
+       <div class="container"><pre><code class="">func_clip() {
+  if which pbcopy &gt;/dev/null 2&gt;&amp;1 ; then
+    # Mac
+    cat $1 | pbcopy
+  elif which xsel &gt;/dev/null 2&gt;&amp;1 ; then
+    # Linux
+    cat $1 | xsel --input --clipboard
+  elif which putclip &gt;/dev/null 2&gt;&amp;1 ; then
+    # Cygwin
+    cat $1 | putclip
+  fi
+}
+alias clip=func_clip
+</code></pre></div>
+      </div><div class="content" id="slide-18">
+       <div class="container"><h2 id="%E7%AB%B6%E6%8A%80%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9E%E5%BE%A1%E7%94%A8%E9%81%94%E3%81%AE%E3%82%B3%E3%83%9E%E3%83%B3%E3%83%89">競技プログラマ御用達のコマンド</h2><ul><li>問題を見る
+</li><li>Vimで問題を解く
+</li><li>clipコマンドでソースをコピー
+</li></ul><p><strong>clip</strong> a.cpp
+</p><ul><li>提出フォームに貼り付ける
+</li></ul></div>
+      </div><div class="content" id="slide-19">
+       <div class="container"><p><code>grep -Ec &quot;^clip&quot; ~/.zsh_history</code>
+</p><p>結果：279行
+</p></div>
+      </div><div class="content" id="slide-20">
+       <div class="container"><h2 id="%E8%B3%AA%E5%95%8F%E3%81%82%E3%82%8A%E3%81%BE%E3%81%99%E3%81%8B%EF%BC%9F">質問ありますか？</h2></div>
+      </div>
+          </div>
+        </div>
+        <script type="text/javascript" src="js/custom.js?1345338488921"></script>
+      </body>
+    </html>
