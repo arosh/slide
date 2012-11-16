@@ -1,0 +1,444 @@
+<html>
+      <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+        <title>Himeji-L1</title>
+        <link type="text/css" rel="stylesheet" href="assets/css/show.css" />
+        <link type="text/css" rel="stylesheet" href="assets/css/prettify.css" />
+        <script type="text/javascript" src="assets/js/jquery.min.js"></script>
+        <script type="text/javascript" src="assets/js/show.js"></script>
+        <script type="text/javascript" src="assets/js/prettify/prettify.js"></script>
+        <script type="text/javascript" src="assets/js/prettify/lang-apollo.js"></script><script type="text/javascript" src="assets/js/prettify/lang-css.js"></script><script type="text/javascript" src="assets/js/prettify/lang-hs.js"></script><script type="text/javascript" src="assets/js/prettify/lang-lisp.js"></script><script type="text/javascript" src="assets/js/prettify/lang-lua.js"></script><script type="text/javascript" src="assets/js/prettify/lang-ml.js"></script><script type="text/javascript" src="assets/js/prettify/lang-proto.js"></script><script type="text/javascript" src="assets/js/prettify/lang-scala.js"></script><script type="text/javascript" src="assets/js/prettify/lang-sql.js"></script><script type="text/javascript" src="assets/js/prettify/lang-sql.js"></script><script type="text/javascript" src="assets/js/prettify/lang-vb.js"></script><script type="text/javascript" src="assets/js/prettify/lang-vhdl.js"></script><script type="text/javascript" src="assets/js/prettify/lang-wiki.js"></script><script type="text/javascript" src="assets/js/prettify/lang-yaml.js"></script><link type="text/css" rel="stylesheet" href="css/custom.css?1353077926906" />
+      <script type="text/javascript"><!--
+        window.onload=function() { prettyPrint(); };
+      --></script>
+      </head>
+      <body>
+        <div id="slides">
+          <div id="reel">
+            <div class="content" id="slide-0">
+       <div class="container"><h2 id="%E3%80%8C%E3%82%82%E3%81%97%E5%81%A5%E5%85%A8%E3%81%AA%E5%AD%A6%E7%94%9F%E3%81%8C">「もし健全な学生が</h2><h2 id="%E3%81%AE"><strong>関数型プログラミング言語</strong>の</h2><h2 id="%E3%80%8E%E3%80%8F%E3%81%AB%E5%8F%96%E3%82%8A%E6%86%91%E3%81%8B%E3%82%8C%E3%81%9F%E3%82%89%E3%80%8D">『<em>Scala</em>』に取り憑かれたら」</h2><br>
+<h3 id="%E7%AC%AC0%E5%9B%9E+%E5%A7%AB%E8%B7%AFL-1%E3%82%B0%E3%83%A9%E3%83%B3%E3%83%97%E3%83%AA">第0回 姫路L-1グランプリ</h3><h3 id="%40+Vol.11">@<a  href="https://sites.google.com/site/himejiitstudy/">姫路IT系勉強会</a> Vol.11</h3></div>
+      </div><div class="content" id="slide-1">
+       <div class="container"><h2 id="%E3%81%8A%E3%81%BE%E3%81%88%E8%AA%B0%E3%82%88">おまえ誰よ</h2><ul><li>本名: いいづか しょう
+</li><li><a  href="http://twttr.com/shora_kujira16">@shora_kujira16</a>
+</li><li>大学生 (市内在住)
+</li><li><p>今読んでる本
+</p><p>→ すごい<em>Haske</em>…うわなにをするやめｒ
+</p></li><li><p>信仰
+</p><p>→ Vim / Zsh / <em>Ruby</em> on Rails
+</p></li></ul></div>
+      </div><div class="content" id="slide-2">
+       <div class="container"><h2 id="Scala%E3%81%A8%E3%81%AF">Scalaとは</h2><ul><li>創始者: Martin Odersky (通称『<em>小田好先生</em>』)
+</li><li>2003年ごろ開発開始
+</li><li><a  href="">Twitter</a>とか<strong>tumblr</strong>でも使われてるらしいよ
+</li></ul><br>
+<ul><li>JVM上の言語
+</li><li>関数型プログラミング<em>“も“</em>できる
+</li></ul><br>
+<ul><li>ポストJavaになったらいいなー
+</li></ul></div>
+      </div><div class="content" id="slide-3">
+       <div class="container"><h2 id="JVM%E4%B8%8A%E3%81%AE%E8%A8%80%E8%AA%9E%EF%BC%9F">JVM上の言語？</h2><p>「Javaファミリー」とか「JVMファミリー」とか呼ばれる
+</p><ul><li>Java
+</li><li>Groovy
+</li><li>Jruby
+</li><li>Jython
+</li><li>Clojure
+</li><li>Scala
+</li></ul><p>などなど
+</p></div>
+      </div><div class="content" id="slide-4">
+       <div class="container"><h2 id="%E5%88%A9%E7%82%B9">利点</h2><ul><li><em>Java</em>のコードを<a  href="">Scala</a>から呼べる
+</li><li><a  href="">Scala</a>のコードを<em>Java</em>から呼べる
+</li></ul><br>
+<h3 id="%E2%86%92+Java%E3%81%AE%E8%86%A8%E5%A4%A7%E3%81%AA%E8%B3%87%E7%94%A3%E3%81%8C%E5%88%A9%E7%94%A8%E3%81%A7%E3%81%8D%E3%82%8B">→ Javaの膨大な資産が利用できる</h3><br>
+<ul><li><span style="color: gray;">余談: Scala for .NET とは何だったのか</span>
+</li></ul></div>
+      </div><div class="content" id="slide-5">
+       <div class="container"><h2 id="%E9%96%A2%E6%95%B0%E5%9E%8B%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E8%A8%80%E8%AA%9E%E3%81%A3%E3%81%A6%E4%BD%95%EF%BC%9F">関数型プログラミング言語って何？</h2><p>→ 関数を値として扱える
+</p><br>
+<ul><li>関数を変数に入れる
+</li><li><p>引数に関数を取る関数
+</p><p>→ いわゆる「<em>高階関数</em>」 (コーカイカンスー)
+</p></li><li>関数を返す関数
+</li></ul><br>
+<h3 id="%E2%80%BB%E4%BB%8A%E5%9B%9E%E3%81%AF1%E5%9B%9E%E3%81%A0%E3%81%91%E4%BD%BF%E3%81%84%E3%81%BE%E3%81%97%E3%81%9F">※今回は1回だけ使いました</h3></div>
+      </div><div class="content" id="slide-6">
+       <div class="container"><h2 id="%E6%9C%80%E8%BF%91%E3%81%AEScala%E5%8B%95%E5%90%91">最近のScala動向</h2><ul><li>2012/8/27
+</li></ul><p><a  href="http://www.scala-lang.org/node/12797">Scala 2.10.0 Milestone 7</a>
+</p><br>
+<ul><li>2012/10/19
+</li></ul><p><a  href="http://www.scala-lang.org/node/13096">Scala 2.10.0 RC1</a>
+</p><br>
+<ul><li>2012/11/9
+</li></ul><p><a  href="http://www.scala-lang.org/node/16606">Scala 2.10.0 RC2</a>
+</p></div>
+      </div><div class="content" id="slide-7">
+       <div class="container"><h2 id="%E7%A7%81%E3%81%A8Scala%E3%81%A8%E3%81%AE%E9%96%A2%E4%BF%82+%281%2F2%29">私とScalaとの関係 (1/2)</h2><ul><li>2011年上半期
+</li></ul><p>存在を知る。いろいろ理解できず挫折
+</p><ul><li>2011年9月
+</li></ul><p>関数脳本を買う。 関数型言語の何たるかを知る
+</p><ul><li>2011年12月
+</li></ul><p>日本Scalaユーザーズグループができる
+</p></div>
+      </div><div class="content" id="slide-8">
+       <div class="container"><h2 id="%E7%A7%81%E3%81%A8Scala%E3%81%A8%E3%81%AE%E9%96%A2%E4%BF%82+%282%2F2%29">私とScalaとの関係 (2/2)</h2><ul><li>2012年2月
+</li></ul><p>某サイトのAPIのラッパーを作ってみたりとか
+</p><ul><li>2012年6月
+</li></ul><p>#histudy vol.6 で Scalaを布教
+</p><ul><li>最近
+</li></ul><p>Scalaz (黒魔術を収めたライブラリ) に手を出し始める
+</p><span style="color: gray;">┌（┌ ＾o＾）┐モナドォ…</span>
+</div>
+      </div><div class="content" id="slide-9">
+       <div class="container"><h2 id="%E3%81%BE%E3%81%9A%E3%81%AFHelloWorld">まずはHelloWorld</h2><br>
+<p>実行する方法は複数ある
+</p><ul><li>コンパイルする
+</li><li>スクリプト形式
+</li><li>対話環境 (REPL)
+</li></ul></div>
+      </div><div class="content" id="slide-10">
+       <div class="container"><h2 id="%E3%82%B3%E3%83%B3%E3%83%91%E3%82%A4%E3%83%AB%E3%81%99%E3%82%8B%E5%A0%B4%E5%90%88">コンパイルする場合</h2><pre><code class="prettyprint lang-scala">// Hello.scala
+object Hello {
+  def main(args: Array[String]) {
+    println(&quot;Hello, world!&quot;)
+  }
+}
+</code></pre><br>
+<pre><code class="">$ scalac Hello.scala
+$ scala Hello
+→ Hello, world!
+</code></pre></div>
+      </div><div class="content" id="slide-11">
+       <div class="container"><h2 id="%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%97%E3%83%88%E5%BD%A2%E5%BC%8F">スクリプト形式</h2><pre><code class="prettyprint lang-scala">// hello.scala
+println(&quot;Hello, world!&quot;)
+</code></pre><br>
+<pre><code class="">$ scala hello.scala
+→ Hello, world!
+</code></pre><br>
+<p>数十行程度のコードを書くときに便利
+</p></div>
+      </div><div class="content" id="slide-12">
+       <div class="container"><h2 id="REPL%E5%BD%A2%E5%BC%8F">REPL形式</h2><pre><code class="">$ scala
+Welcome to Scala version 2.9.2 (Java HotSpot(TM) 64-Bit Server VM, Java 1.6.0_37).
+Type in expressions to have them evaluated.
+Type :help for more information.
+
+scala&gt; println(&quot;Hello, world!&quot;)
+→ Hello, world!
+</code></pre><br>
+<p>テスト、実験などで大活躍
+</p></div>
+      </div><div class="content" id="slide-13">
+       <div class="container"><h2 id="%E8%AA%B2%E9%A1%8C1.+fizzbuzz">課題1. fizzbuzz</h2><pre><code class="prettyprint lang-scala">for (i &lt;- 1 to 100) {
+  if (i % 3 == 0 &amp;&amp; i % 5 == 0)
+    println(&quot;FizzBuzz&quot;)
+  else if (i % 3 == 0)
+    println(&quot;Fizz&quot;)
+  else if (i % 5 == 0)
+    println(&quot;Buzz&quot;)
+  else
+    println(i)
+}
+</code></pre></div>
+      </div><div class="content" id="slide-14">
+       <div class="container"><h2 id="for%E5%BC%8F">for式</h2><pre><code class="prettyprint lang-scala">for (i &lt;- 1 to 100)
+</code></pre><br>
+<ul><li>Scalaには <code>for (…; …; …) {}</code> のような構文は無い
+</li><li>Javaの<em>拡張for文</em>ならある
+</li></ul><br>
+<pre><code class="prettyprint lang-java">for (int i : list) // Java
+</code></pre><pre><code class="prettyprint lang-ruby">for i in 1..100 // Ruby
+</code></pre><pre><code class="prettyprint lang-php">foreach (range(1, 100) as $i) // PHP
+</code></pre><pre><code class="prettyprint lang-python">for i in range(1,101) // Python
+</code></pre></div>
+      </div><div class="content" id="slide-15">
+       <div class="container"><h2 id="%E3%81%9D%E3%81%AE%E4%BB%96">その他</h2><ul><li>文法の<em>見た目</em>はJavaの文法を踏襲
+</li></ul><pre><code class="prettyprint lang-scala">if (i % 3 == 0 &amp;&amp; i % 5 == 0)
+</code></pre><ul><li><p>ただし<em>隠された力</em>を持っていたりする
+</p><ul><li>「forはモナドを扱うための…
+</li><li>「ifは三項演算子…
+</li></ul></li><li>はじめのうちは<strong>better Java</strong>として使えば良いのでは
+</li></ul></div>
+      </div><div class="content" id="slide-16">
+       <div class="container"><h2 id="%E8%AA%B2%E9%A1%8C1.+fizzbuzz+%28%E5%86%8D%E6%8E%B2%29">課題1. fizzbuzz (再掲)</h2><pre><code class="prettyprint lang-scala">for (i &lt;- 1 to 100) {
+  if (i % 3 == 0 &amp;&amp; i % 5 == 0)
+    println(&quot;FizzBuzz&quot;)
+  else if (i % 3 == 0)
+    println(&quot;Fizz&quot;)
+  else if (i % 5 == 0)
+    println(&quot;Buzz&quot;)
+  else
+    println(i)
+}
+</code></pre></div>
+      </div><div class="content" id="slide-17">
+       <div class="container"><h2 id="%E8%AA%B2%E9%A1%8C2.+GPA%28Grade+Point+Average%29">課題2. GPA(Grade Point Average)</h2><br>
+<h3 id="%E6%96%B9%E9%87%9D">方針</h3><ol><li>評価(A,B,C,D,F)を点数に換算
+</li><li>その合計を変数 sum に入れる
+</li><li>単位の個数 N で割る
+</li></ol><br>
+<span style="color: gray;">余談: 発表者は振動波動論 (通称「しんぱ」) の単位にｇｋｂｒ中</span>
+</div>
+      </div><div class="content" id="slide-18">
+       <div class="container"><h2 id="%E6%84%9A%E7%9B%B4%E3%81%AB%E6%9B%B8%E3%81%84%E3%81%A6%E3%81%BF%E3%81%9F">愚直に書いてみた</h2><pre><code class="prettyprint lang-scala">var N = readInt // 1行読み込んで整数に
+var r = readLine // 1行読み込む
+var sum = 0
+
+for (c &lt;- r) {
+  if      (c == 'A') sum += 4
+  else if (c == 'B') sum += 3
+  else if (c == 'C') sum += 2
+  else if (c == 'D') sum += 1
+  else if (c == 'F') sum += 0
+}
+var gpa = sum.toDouble / N
+println(gpa)
+</code></pre></div>
+      </div><div class="content" id="slide-19">
+       <div class="container"><h2 id="%E3%83%91%E3%82%BF%E3%83%BC%E3%83%B3%E3%83%9E%E3%83%83%E3%83%81">パターンマッチ</h2><p>→ Switch-Case文に相当するもの
+</p><p>例によって<em>隠された力</em>も持っている
+</p><pre><code class="prettyprint lang-scala">var sum = 0
+for (c &lt;- r) {
+  c match {
+    case 'A' =&gt; sum += 4
+    case 'B' =&gt; sum += 3
+    case 'C' =&gt; sum += 2
+    case 'D' =&gt; sum += 1
+    case 'F' =&gt; sum += 0
+  }
+}
+</code></pre></div>
+      </div><div class="content" id="slide-20">
+       <div class="container"><h2 id="%E9%9A%A0%E3%81%95%E3%82%8C%E3%81%9F%E5%8A%9B%E3%81%9D%E3%81%AE%EF%BC%91">隠された力その１</h2><p>パターンマッチは<em>値を返す</em>
+</p><pre><code class="prettyprint lang-scala">var sum = 0
+for (c &lt;- r) {
+  var k = (c match {
+    case 'A' =&gt; 4
+    case 'B' =&gt; 3
+    case 'C' =&gt; 2
+    case 'D' =&gt; 1
+    case 'F' =&gt; 0
+  })
+  sum += k
+}
+</code></pre></div>
+      </div><div class="content" id="slide-21">
+       <div class="container"><h1 id="%E3%81%A8%E3%82%8A%E3%81%82%E3%81%88%E3%81%9A%E5%8B%95%E3%81%8F%E3%82%B3%E3%83%BC%E3%83%89%E3%81%AF%E5%AE%8C%E6%88%90">とりあえず動くコードは完成</h1></div>
+      </div><div class="content" id="slide-22">
+       <div class="container"><h1 id="%E3%81%A8%E3%81%93%E3%82%8D%E3%81%A7%E3%80%81%E3%81%BF%E3%81%AA%E3%81%95%E3%82%93">ところで、みなさん</h1><br>
+<h1 id="%E3%81%A3%E3%81%A6%E5%BE%A1%E5%AD%98%E7%9F%A5%E3%81%A7%E3%81%99%E3%81%8B%EF%BC%9F"><em>const教</em> って御存知ですか？</h1></div>
+      </div><div class="content" id="slide-23">
+       <div class="container"><h2 id="const%E3%81%A8%E3%81%AF">constとは</h2><p>→ 変数を<em>読み取り専用</em>にする修飾子。Javaでは final とも
+</p><pre><code class="prettyprint lang-cpp">
+int hoge;
+
+void foo() { /* hogeを利用する処理 */ }
+void bar() { /* hogeを利用する処理 */ }
+
+hoge = 123;
+foo();
+bar();
+</code></pre><p>→ foo() の中で hoge を<strong>誤って書き換える</strong>と bar() も<em>バグる</em>
+</p></div>
+      </div><div class="content" id="slide-24">
+       <div class="container"><h2 id="%E5%AF%BE%E5%87%A6%E6%B3%95">対処法</h2><ol><li>必要な情報は<strong>引数で渡す</strong>
+</li><li>hogeを<em>書き換えられないように</em>する
+</li></ol><br>
+<p>→ 2の場合はconstを付けることで解決
+</p><p>bar()の中で<a  href="">書き換えていないかどうか</a>ということに対して<em>安心感がある</em>
+</p></div>
+      </div><div class="content" id="slide-25">
+       <div class="container"><h2 id="const%E6%95%99%E3%81%AE%E6%B4%BB%E5%8B%95%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6">const教の活動について</h2><ul><li>主にC++界隈に生息？
+</li><li>constを付けるべき変数にconstを付ける
+</li><li>constを付けるために<em>処理を書き換える</em>
+</li></ul><br>
+<h2 id="Scala%E3%81%A8const%E6%95%99%E3%81%A8%E3%81%AE%E9%96%A2%E4%BF%82">Scalaとconst教との関係</h2><h3 id="%E2%86%92+%E5%A4%89%E6%95%B0%E3%81%AE%E5%AE%A3%E8%A8%80%E3%82%92%E3%81%AB%E5%A4%89%E3%81%88%E3%82%8B%E3%81%A0%E3%81%91%E3%81%A7%E3%81%AB%E3%81%AA%E3%82%8B">→ 変数の宣言<strong>var</strong>を<em>val</em>に変えるだけで<em>const</em>になる</h3></div>
+      </div><div class="content" id="slide-26">
+       <div class="container"><h2 id="%E7%8F%BE%E5%9C%A8%E3%81%AE%E3%82%B3%E3%83%BC%E3%83%89">現在のコード</h2><pre><code class="prettyprint lang-scala">var N = readInt
+var r = readLine
+var sum = 0
+for (c &lt;- r) {
+  var k = (c match {
+    case 'A' =&gt; 4
+    /* 略 */
+  })
+  sum += k
+}
+var gpa = sum.toDouble / N
+println(gpa)
+</code></pre></div>
+      </div><div class="content" id="slide-27">
+       <div class="container"><h2 id="%E5%8F%AF%E8%83%BD%E3%81%AA%E3%81%A8%E3%81%93%E3%82%8D%E3%81%A0%E3%81%91%E6%9B%B8%E3%81%8D%E6%8F%9B%E3%81%88">可能なところだけ書き換え</h2><pre><code class="prettyprint lang-scala">val N = readInt
+val r = readLine
+var sum = 0
+for (c &lt;- r) {
+  val k = (c match {
+    case 'A' =&gt; sum += 4
+    /* 略 */
+  })
+  sum += k
+}
+val gpa = sum.toDouble / N
+println(gpa)
+</code></pre></div>
+      </div><div class="content" id="slide-28">
+       <div class="container"><h1 id="sum+%E3%82%92%E6%B6%88%E3%81%97%E5%8E%BB%E3%82%8A%E3%81%9F%E3%81%84%EF%BC%81%EF%BC%81"><em>var</em> sum を消し去りたい！！</h1></div>
+      </div><div class="content" id="slide-29">
+       <div class="container"><h2 id="%E3%81%A8%E3%81%93%E3%82%8D%E3%81%A7">ところで</h2><p>→ リストにはsumというメソッドがある
+</p><pre><code class="prettyprint lang-scala">List(1, 2, 3).sum // =&gt; 6
+</code></pre><br>
+<p>点数に変換したリスト <code>scoreList</code> を作れば
+</p><pre><code class="prettyprint lang-scala">val r = &quot;BAF&quot;
+val scoreList = (3, 4, 0)
+val sum = scoreList.sum
+</code></pre><p><em>var</em>を消せる！
+</p></div>
+      </div><div class="content" id="slide-30">
+       <div class="container"><h2 id="%E7%84%A1%E7%90%86%E3%82%84%E3%82%8A%E5%A4%89%E6%8F%9B%E3%81%97%E3%81%A6%E3%81%BF%E3%81%9F">無理やり変換してみた</h2><pre><code class="prettyprint lang-scala">var scoreList = List.empty[Int]
+for (c &lt;- r) {
+  val k = (c match {
+    case 'A' =&gt; 4
+    case 'B' =&gt; 3
+    case 'C' =&gt; 2
+    case 'D' =&gt; 1
+    case 'F' =&gt; 0
+  })
+  scoreList :+= k // 後ろに追加する
+}
+val sum = scoreList.sum
+</code></pre></div>
+      </div><div class="content" id="slide-31">
+       <div class="container"><h1 id="%E3%82%82%E3%81%A3%E3%81%A8%E7%B0%A1%E5%8D%98%E3%81%AB%E3%82%84%E3%82%8A%E3%81%9F%E3%81%84">もっと簡単にやりたい</h1><h1 id="scoreList%E3%81%AE%E3%82%92%E6%B6%88%E3%81%97%E3%81%9F%E3%81%84">scoreListの<em>var</em>を消したい</h1></div>
+      </div><div class="content" id="slide-32">
+       <div class="container"><h2 id="%E9%96%A2%E6%95%B0%E5%9E%8B%E8%A8%80%E8%AA%9E%E3%81%AE%E5%BF%85%E6%AE%BA%E6%8A%80">関数型言語の必殺技</h2><p>→ 高階関数
+</p><h3 id="%3A+%E3%80%8C%E8%A6%81%E7%B4%A0%E3%82%92%E5%A4%89%E6%8F%9B%E3%81%99%E3%82%8B%E9%96%A2%E6%95%B0%E3%80%8D%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%A6%E3%83%AA%E3%82%B9%E3%83%88%E3%82%92%E5%A4%89%E6%8F%9B"><em>map</em>: 「要素を変換する関数」を使ってリストを変換</h3><br>
+<pre><code class="prettyprint lang-scala">val double = { a: Int =&gt; 2 * a } // 変換する関数
+List(1, 2, 3).map(double)
+// =&gt; List(double(1), double(2), double(3))
+// =&gt; List(2, 4, 6)
+
+// 略記法 (無名関数)
+List(1, 2, 3).map( a =&gt; 2 * a )
+</code></pre></div>
+      </div><div class="content" id="slide-33">
+       <div class="container"><h2 id="%E5%BF%85%E6%AE%BA%E6%8A%80%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%A6%E3%81%BF%E3%82%8B">必殺技を使ってみる</h2><pre><code class="prettyprint lang-scala">val N = readInt
+val r = readLine
+
+val scoreList = r.map {
+  case 'A' =&gt; 4
+  case 'B' =&gt; 3
+  case 'C' =&gt; 2
+  case 'D' =&gt; 1
+  case 'F' =&gt; 0
+}
+val sum = scoreList.sum
+val gpa = sum.toDouble / N
+println(gpa)
+</code></pre></div>
+      </div><div class="content" id="slide-34">
+       <div class="container"><h2 id="%E8%AA%B2%E9%A1%8C3.+tail+-n+5">課題3. tail -n 5</h2><h3 id="%E9%9B%A3%E3%81%97%E3%81%84%E3%81%A8%E3%81%93%E3%82%8D">難しいところ</h3><ul><li>全部読み込んで、後ろから5行 → メモリが…
+</li><li>後ろから読み込む → 難しい(特にScalaでは)
+</li><li><p>前から読み込んで、ゴミは捨てる、という処理を書く
+</p><ul><li>Haskellでは良い感じに取り計らってくれるが…
+</li></ul></li><li>5行未満のファイルを読み込ませた時の処理
+</li></ul></div>
+      </div><div class="content" id="slide-35">
+       <div class="container"><h2 id="%E7%A7%81%E3%81%AE%E8%A7%A3%E6%B3%95">私の解法</h2><h3 id="%E2%86%92+Queue%E3%81%AB%E6%94%BE%E3%82%8A%E8%BE%BC%E3%82%80">→ Queueに放り込む</h3><ul><li>データを1つ入れる (push, enqueue)
+</li><li>データを1つ取り出す (pop, dequeue)
+</li><li>先に入れたものが先に出る (<em>FIFO</em>)
+</li></ul><br>
+<ul><li><p>前の行から順にpushして、
+</p><p>サイズが5を超えたらpopして前のデータを捨てる
+</p></li></ul></div>
+      </div><div class="content" id="slide-36">
+       <div class="container"><h2 id="%E5%86%8D%E3%81%B3"><strong>const教</strong>再び</h2><ul><li>データを入れる、取り出すという操作は、Queueの<em>状態を変更する</em> → mutableなオブジェクト
+</li><li>const教徒としてはコレはマズい
+</li><li>Queueの状態を変更せずにデータの出し入れを行う方法もある → <a  href="https://twitter.com/kakkun61">@kakkun61</a> に聞いて下さい
+</li><li>今回はちょっと逃げてみよう
+</li></ul></div>
+      </div><div class="content" id="slide-37">
+       <div class="container"><h2 id="%E5%89%8D%E3%81%8B%E3%82%89%E9%A0%86%E3%81%AB%E8%AA%AD%E3%81%BF%E8%BE%BC%E3%82%80">前から順に読み込む</h2><p><em>Java</em>の<strong>BufferdReader</strong>はさすがにダサい
+</p><pre><code class="prettyprint lang-java">while (( line = reader.readLine() ) != null) { /* */ }
+</code></pre><br>
+<p><a  href="">Scala</a>の<em>Iterator</em>が便利！
+</p><pre><code class="prettyprint lang-scala">for ( line &lt;- reader ) { /* */ }
+</code></pre><br>
+<p>→ 読み込んだ後のデータは捨てる
+</p></div>
+      </div><div class="content" id="slide-38">
+       <div class="container"><pre><code class="prettyprint lang-scala">import java.io.File
+
+import scala.collection.mutable
+import scala.io.Source
+
+val PARAM_N = 5
+
+if (args.size == 0) {
+  println(&quot;usage: scala tail.scala fileName&quot;)
+  sys.exit(1)
+}
+
+val fileName = args(0)
+</code></pre></div>
+      </div><div class="content" id="slide-39">
+       <div class="container"><pre><code class="prettyprint lang-scala">val handle = new File(fileName)
+
+if (handle.exists == false) {
+  println(fileName + &quot;: No such file or directory&quot;)
+  sys.exit(1)
+}
+
+val stream = Source.fromFile(handle)
+val lineIter = stream.getLines
+
+val queue = mutable.Queue.empty[String]
+</code></pre></div>
+      </div><div class="content" id="slide-40">
+       <div class="container"><pre><code class="prettyprint lang-scala">for (line &lt;- lineIter) {
+  queue.enqueue(line)
+
+  if (queue.size &gt; PARAM_N) {
+    queue.dequeue()
+  }
+}
+
+stream.close()
+
+for (line &lt;- queue) {
+  println(line)
+}
+</code></pre></div>
+      </div><div class="content" id="slide-41">
+       <div class="container"><h2 id="%E3%81%BE%E3%81%A8%E3%82%81">まとめ</h2><ul><li>Scalaの構文には<a  href="">隠された力</a>が秘められている
+</li><li><strong>コーカイカンスー</strong>は関数型プログラミングの必殺技
+</li><li>better Javaとしても使える
+</li><li>const教では一緒に<em>const</em>を付けてくれる仲間を募集しています
+</li></ul></div>
+      </div><div class="content" id="slide-42">
+       <div class="container"><h2 id="%E3%81%8A%E3%81%BE%E3%81%91%40FizzBuzz">おまけ@FizzBuzz</h2><pre><code class="prettyprint lang-scala">import scalaz._, Scalaz._, effects._
+
+val fizzbuzz: Int =&gt; String = { n: Int =&gt;
+  ((n % 3 === 0 option &quot;Fizz&quot;) |+|
+  (n % 5 === 0 option &quot;Buzz&quot;)) | n.shows
+}
+
+val runc: IO[Unit] =
+  (1 to 100).map(fizzbuzz &gt;&gt;&gt; putStrLn).sumr
+
+def main(args: Array[String]): Unit =
+  runc.unsafePerformIO
+</code></pre></div>
+      </div><div class="content" id="slide-43">
+       <div class="container"><h2 id="%E3%81%8A%E3%81%BE%E3%81%91%40tail+-n+5">おまけ@tail -n 5</h2><pre><code class="prettyprint lang-scala">import scala.sys.process._
+
+val fileName = args(0)
+
+(&quot;tail -n 5 %s&quot; format fileName) !
+</code></pre></div>
+      </div>
+          </div>
+        </div>
+        <script type="text/javascript" src="js/custom.js?1353077927785"></script>
+      </body>
+    </html>
