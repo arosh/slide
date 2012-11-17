@@ -24,19 +24,23 @@
 
 * 前の行から順にpushして、
 
-	サイズが5を超えたらpopして前のデータを捨てる
+	サイズが5を超えたらpopして古いデータを捨てる
 
 !SLIDE
 
-## **const教**再び
+## *const教*再び
 
 * データを入れる、取り出すという操作は、Queueの*状態を変更する* → mutableなオブジェクト
 
 * const教徒としてはコレはマズい
 
-* Queueの状態を変更せずにデータの出し入れを行う方法もある → [@kakkun61](https://twitter.com/kakkun61) に聞いて下さい
+* Queueの状態を変更せずにデータの出し入れを行う方法もある 
+
+	→ [@kakkun61](https://twitter.com/kakkun61) に聞いて下さい
 
 * 今回はちょっと逃げてみよう
+
+	→ 単なる **better Java** として使う
 
 !SLIDE
 
@@ -50,7 +54,12 @@ while (( line = reader.readLine() ) != null) { /* */ }
 
 <br>
 
-[Scala]()の*Iterator*が便利！
+* 何か値を取り出せる
+* 何らかの状態に達するまで取り出し続け
+
+<br>
+
+→ [Scala]()の*Iterator*が便利！
 
 ```scala
 for ( line <- reader ) { /* */ }
@@ -84,8 +93,8 @@ val fileName = args(0)
 ```scala
 val handle = new File(fileName)
 
-if (handle.exists == false) {
-  println(fileName + ": No such file or directory")
+if (handle.canRead == false) {
+  println(fileName + ": Can't open file")
   sys.exit(1)
 }
 

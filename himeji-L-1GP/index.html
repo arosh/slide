@@ -7,7 +7,7 @@
         <script type="text/javascript" src="assets/js/jquery.min.js"></script>
         <script type="text/javascript" src="assets/js/show.js"></script>
         <script type="text/javascript" src="assets/js/prettify/prettify.js"></script>
-        <script type="text/javascript" src="assets/js/prettify/lang-apollo.js"></script><script type="text/javascript" src="assets/js/prettify/lang-css.js"></script><script type="text/javascript" src="assets/js/prettify/lang-hs.js"></script><script type="text/javascript" src="assets/js/prettify/lang-lisp.js"></script><script type="text/javascript" src="assets/js/prettify/lang-lua.js"></script><script type="text/javascript" src="assets/js/prettify/lang-ml.js"></script><script type="text/javascript" src="assets/js/prettify/lang-proto.js"></script><script type="text/javascript" src="assets/js/prettify/lang-scala.js"></script><script type="text/javascript" src="assets/js/prettify/lang-sql.js"></script><script type="text/javascript" src="assets/js/prettify/lang-sql.js"></script><script type="text/javascript" src="assets/js/prettify/lang-vb.js"></script><script type="text/javascript" src="assets/js/prettify/lang-vhdl.js"></script><script type="text/javascript" src="assets/js/prettify/lang-wiki.js"></script><script type="text/javascript" src="assets/js/prettify/lang-yaml.js"></script><link type="text/css" rel="stylesheet" href="css/custom.css?1353077926906" />
+        <script type="text/javascript" src="assets/js/prettify/lang-apollo.js"></script><script type="text/javascript" src="assets/js/prettify/lang-css.js"></script><script type="text/javascript" src="assets/js/prettify/lang-hs.js"></script><script type="text/javascript" src="assets/js/prettify/lang-lisp.js"></script><script type="text/javascript" src="assets/js/prettify/lang-lua.js"></script><script type="text/javascript" src="assets/js/prettify/lang-ml.js"></script><script type="text/javascript" src="assets/js/prettify/lang-proto.js"></script><script type="text/javascript" src="assets/js/prettify/lang-scala.js"></script><script type="text/javascript" src="assets/js/prettify/lang-sql.js"></script><script type="text/javascript" src="assets/js/prettify/lang-sql.js"></script><script type="text/javascript" src="assets/js/prettify/lang-vb.js"></script><script type="text/javascript" src="assets/js/prettify/lang-vhdl.js"></script><script type="text/javascript" src="assets/js/prettify/lang-wiki.js"></script><script type="text/javascript" src="assets/js/prettify/lang-yaml.js"></script><link type="text/css" rel="stylesheet" href="css/custom.css?1353118233773" />
       <script type="text/javascript"><!--
         window.onload=function() { prettyPrint(); };
       --></script>
@@ -318,7 +318,7 @@ List(1, 2, 3).map(double)
 // =&gt; List(double(1), double(2), double(3))
 // =&gt; List(2, 4, 6)
 
-// 略記法 (無名関数)
+// 略記法 (無名関数を使う)
 List(1, 2, 3).map( a =&gt; 2 * a )
 </code></pre></div>
       </div><div class="content" id="slide-33">
@@ -337,36 +337,71 @@ val gpa = sum.toDouble / N
 println(gpa)
 </code></pre></div>
       </div><div class="content" id="slide-34">
+       <div class="container"><h2 id="%E6%9C%80%E5%88%9D%E3%81%AE%E3%82%B3%E3%83%BC%E3%83%89">最初のコード</h2><pre><code class="prettyprint lang-scala">var N = readInt
+var r = readLine
+var sum = 0
+
+for (c &lt;- r) {
+  if      (c == 'A') sum += 4
+  else if (c == 'B') sum += 3
+  else if (c == 'C') sum += 2
+  else if (c == 'D') sum += 1
+  else if (c == 'F') sum += 0
+}
+var gpa = sum.toDouble / N
+println(gpa)
+</code></pre></div>
+      </div><div class="content" id="slide-35">
+       <div class="container"><h2 id="%E6%9C%80%E7%B5%82%E7%9A%84%E3%81%AA%E3%82%B3%E3%83%BC%E3%83%89">最終的なコード</h2><pre><code class="prettyprint lang-scala">val N = readInt
+val r = readLine
+
+val scoreList = r.map {
+  case 'A' =&gt; 4
+  case 'B' =&gt; 3
+  case 'C' =&gt; 2
+  case 'D' =&gt; 1
+  case 'F' =&gt; 0
+}
+val sum = scoreList.sum
+val gpa = sum.toDouble / N
+println(gpa)
+</code></pre></div>
+      </div><div class="content" id="slide-36">
        <div class="container"><h2 id="%E8%AA%B2%E9%A1%8C3.+tail+-n+5">課題3. tail -n 5</h2><h3 id="%E9%9B%A3%E3%81%97%E3%81%84%E3%81%A8%E3%81%93%E3%82%8D">難しいところ</h3><ul><li>全部読み込んで、後ろから5行 → メモリが…
 </li><li>後ろから読み込む → 難しい(特にScalaでは)
 </li><li><p>前から読み込んで、ゴミは捨てる、という処理を書く
 </p><ul><li>Haskellでは良い感じに取り計らってくれるが…
 </li></ul></li><li>5行未満のファイルを読み込ませた時の処理
 </li></ul></div>
-      </div><div class="content" id="slide-35">
+      </div><div class="content" id="slide-37">
        <div class="container"><h2 id="%E7%A7%81%E3%81%AE%E8%A7%A3%E6%B3%95">私の解法</h2><h3 id="%E2%86%92+Queue%E3%81%AB%E6%94%BE%E3%82%8A%E8%BE%BC%E3%82%80">→ Queueに放り込む</h3><ul><li>データを1つ入れる (push, enqueue)
 </li><li>データを1つ取り出す (pop, dequeue)
 </li><li>先に入れたものが先に出る (<em>FIFO</em>)
 </li></ul><br>
 <ul><li><p>前の行から順にpushして、
-</p><p>サイズが5を超えたらpopして前のデータを捨てる
+</p><p>サイズが5を超えたらpopして古いデータを捨てる
 </p></li></ul></div>
-      </div><div class="content" id="slide-36">
-       <div class="container"><h2 id="%E5%86%8D%E3%81%B3"><strong>const教</strong>再び</h2><ul><li>データを入れる、取り出すという操作は、Queueの<em>状態を変更する</em> → mutableなオブジェクト
+      </div><div class="content" id="slide-38">
+       <div class="container"><h2 id="%E5%86%8D%E3%81%B3"><em>const教</em>再び</h2><ul><li>データを入れる、取り出すという操作は、Queueの<em>状態を変更する</em> → mutableなオブジェクト
 </li><li>const教徒としてはコレはマズい
-</li><li>Queueの状態を変更せずにデータの出し入れを行う方法もある → <a  href="https://twitter.com/kakkun61">@kakkun61</a> に聞いて下さい
-</li><li>今回はちょっと逃げてみよう
-</li></ul></div>
-      </div><div class="content" id="slide-37">
+</li><li><p>Queueの状態を変更せずにデータの出し入れを行う方法もある 
+</p><p>→ <a  href="https://twitter.com/kakkun61">@kakkun61</a> に聞いて下さい
+</p></li><li><p>今回はちょっと逃げてみよう
+</p><p>→ 単なる <strong>better Java</strong> として使う
+</p></li></ul></div>
+      </div><div class="content" id="slide-39">
        <div class="container"><h2 id="%E5%89%8D%E3%81%8B%E3%82%89%E9%A0%86%E3%81%AB%E8%AA%AD%E3%81%BF%E8%BE%BC%E3%82%80">前から順に読み込む</h2><p><em>Java</em>の<strong>BufferdReader</strong>はさすがにダサい
 </p><pre><code class="prettyprint lang-java">while (( line = reader.readLine() ) != null) { /* */ }
 </code></pre><br>
-<p><a  href="">Scala</a>の<em>Iterator</em>が便利！
+<ul><li>何か値を取り出せる
+</li><li>何らかの状態に達するまで取り出し続け
+</li></ul><br>
+<p>→ <a  href="">Scala</a>の<em>Iterator</em>が便利！
 </p><pre><code class="prettyprint lang-scala">for ( line &lt;- reader ) { /* */ }
 </code></pre><br>
 <p>→ 読み込んだ後のデータは捨てる
 </p></div>
-      </div><div class="content" id="slide-38">
+      </div><div class="content" id="slide-40">
        <div class="container"><pre><code class="prettyprint lang-scala">import java.io.File
 
 import scala.collection.mutable
@@ -381,11 +416,11 @@ if (args.size == 0) {
 
 val fileName = args(0)
 </code></pre></div>
-      </div><div class="content" id="slide-39">
+      </div><div class="content" id="slide-41">
        <div class="container"><pre><code class="prettyprint lang-scala">val handle = new File(fileName)
 
-if (handle.exists == false) {
-  println(fileName + &quot;: No such file or directory&quot;)
+if (handle.canRead == false) {
+  println(fileName + &quot;: Can't open file&quot;)
   sys.exit(1)
 }
 
@@ -394,7 +429,7 @@ val lineIter = stream.getLines
 
 val queue = mutable.Queue.empty[String]
 </code></pre></div>
-      </div><div class="content" id="slide-40">
+      </div><div class="content" id="slide-42">
        <div class="container"><pre><code class="prettyprint lang-scala">for (line &lt;- lineIter) {
   queue.enqueue(line)
 
@@ -409,13 +444,13 @@ for (line &lt;- queue) {
   println(line)
 }
 </code></pre></div>
-      </div><div class="content" id="slide-41">
+      </div><div class="content" id="slide-43">
        <div class="container"><h2 id="%E3%81%BE%E3%81%A8%E3%82%81">まとめ</h2><ul><li>Scalaの構文には<a  href="">隠された力</a>が秘められている
 </li><li><strong>コーカイカンスー</strong>は関数型プログラミングの必殺技
 </li><li>better Javaとしても使える
 </li><li>const教では一緒に<em>const</em>を付けてくれる仲間を募集しています
 </li></ul></div>
-      </div><div class="content" id="slide-42">
+      </div><div class="content" id="slide-44">
        <div class="container"><h2 id="%E3%81%8A%E3%81%BE%E3%81%91%40FizzBuzz">おまけ@FizzBuzz</h2><pre><code class="prettyprint lang-scala">import scalaz._, Scalaz._, effects._
 
 val fizzbuzz: Int =&gt; String = { n: Int =&gt;
@@ -429,7 +464,7 @@ val runc: IO[Unit] =
 def main(args: Array[String]): Unit =
   runc.unsafePerformIO
 </code></pre></div>
-      </div><div class="content" id="slide-43">
+      </div><div class="content" id="slide-45">
        <div class="container"><h2 id="%E3%81%8A%E3%81%BE%E3%81%91%40tail+-n+5">おまけ@tail -n 5</h2><pre><code class="prettyprint lang-scala">import scala.sys.process._
 
 val fileName = args(0)
@@ -439,6 +474,6 @@ val fileName = args(0)
       </div>
           </div>
         </div>
-        <script type="text/javascript" src="js/custom.js?1353077927785"></script>
+        <script type="text/javascript" src="js/custom.js?1353118234655"></script>
       </body>
     </html>

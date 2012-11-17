@@ -241,7 +241,7 @@ List(1, 2, 3).map(double)
 // => List(double(1), double(2), double(3))
 // => List(2, 4, 6)
 
-// 略記法 (無名関数)
+// 略記法 (無名関数を使う)
 List(1, 2, 3).map( a => 2 * a )
 ```
 
@@ -265,3 +265,43 @@ val gpa = sum.toDouble / N
 println(gpa)
 ```
 
+!SLIDE
+
+## 最初のコード
+
+```scala
+var N = readInt
+var r = readLine
+var sum = 0
+
+for (c <- r) {
+  if      (c == 'A') sum += 4
+  else if (c == 'B') sum += 3
+  else if (c == 'C') sum += 2
+  else if (c == 'D') sum += 1
+  else if (c == 'F') sum += 0
+}
+var gpa = sum.toDouble / N
+println(gpa)
+```
+
+!SLIDE
+
+## 最終的なコード
+
+
+```scala
+val N = readInt
+val r = readLine
+
+val scoreList = r.map {
+  case 'A' => 4
+  case 'B' => 3
+  case 'C' => 2
+  case 'D' => 1
+  case 'F' => 0
+}
+val sum = scoreList.sum
+val gpa = sum.toDouble / N
+println(gpa)
+```
